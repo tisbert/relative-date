@@ -1,21 +1,22 @@
 <?php
 
 field::$methods['relative'] = function($field, $gran=-1) {
+    include('relative-date-lang.php');
+
     if (count(site()->languages()) < 1)
         $language = 'en';
     else
         $language = site()->language()->code();
 
-        /* test if current language is supported */
-        // if (!in_array()) $language = 'en';
+    if (!array_key_exists($language, $languages))
+        $language = 'en';
 
-    $field->value = ftime($field->page->date(false, $field->key), $language, $gran);
+    $field->value = ftime($field->page->date(false, $field->key), $language, $languages, $gran);
     return $field;
 };
 
-function fTime($time, $language, $gran=-1) {
+function fTime($time, $language, $languages, $gran=-1) {
 
-    include('relative-date-lang.php');
 
     $d[0] = array(1,$languages[$language]['sec'][0],$languages[$language]['sec'][1]);
     $d[1] = array(60,$languages[$language]['min'][0],$languages[$language]['min'][1]);
@@ -62,7 +63,7 @@ function fTime($time, $language, $gran=-1) {
          }
     }
 
-    $relative = ($diff>0)?$languages[$language]['meta']['earlier']:$languages[$language]['meta']['later'];
+    $relative = ($diff>0)?$languages[$language]['meta']['later']:$languages[$language]['meta']['earlier'];
     if ($languages[$language]['meta']['position'] == 'begin') :
         return $relative.' '.$return;
     elseif ($languages[$language]['meta']['position'] == 'end') :
