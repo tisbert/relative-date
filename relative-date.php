@@ -4,12 +4,14 @@ field::$methods['relative'] = function($field, $gran = false) {
     include('relative-date-lang.php');
 
     if (count(site()->languages()) < 1)
-        $language = c::get('relativedate.default', 'en');
+        $locale = c::get('relativedate.default', 'en');
     else
-        $language = site()->language()->code();
+        $locale = site()->language()->code();
 
-    if (!array_key_exists($language, $languages))
-        $language = c::get('relativedate.default', 'en');
+    if (!file_exists(__DIR__.'/lang/'.$locale.'.php'))
+        $locale = c::get('relativedate.default', 'en');
+
+    $language = require 'lang/'.$locale.'.php';
 
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 
@@ -19,53 +21,50 @@ field::$methods['relative'] = function($field, $gran = false) {
 
 function fTime($time, $language, $languages, $gran) {
 
-
     $d[0] = array(
                 1,
-                $languages[$language]['sec'][0],
-                array_pop($languages[$language]['sec'])
+                $language['sec'][0],
+                array_pop($language['sec'])
                 );
     $d[1] = array(
                 60,
-                $languages[$language]['min'][0],
-                array_pop($languages[$language]['min'])
+                $language['min'][0],
+                array_pop($language['min'])
                 );
     $d[2] = array(
                 3600,
-                $languages[$language]['h'][0],
-                array_pop($languages[$language]['h'])
+                $language['h'][0],
+                array_pop($language['h'])
                 );
     $d[3] = array(
                 86400,
-                $languages[$language]['d'][0],
-                array_pop($languages[$language]['d'])
+                $language['d'][0],
+                array_pop($language['d'])
                 );
     $d[4] = array(
                 604800,
-                $languages[$language]['w'][0],
-                array_pop($languages[$language]['w'])
+                $language['w'][0],
+                array_pop($language['w'])
                 );
     $d[5] = array(
                 2592000,
-                $languages[$language]['m'][0],
-                array_pop($languages[$language]['m'])
+                $language['m'][0],
+                array_pop($language['m'])
                 );
     $d[6] = array(
                 31104000,
-                $languages[$language]['y'][0],
-                array_pop($languages[$language]['y'])
+                $language['y'][0],
+                array_pop($language['y'])
                 );
 
 
-    $w = array();
-
+    $dateEl = array();
     $phrase = "";
     $now = time();
     $diff = ($now-$time);
     $secondsLeft = $diff;
     $stopat = 0;
     $elements = 0;
-
     for($i=6; $i>0; $i--)
     {
          $dateEl[$i] = intval($secondsLeft/$d[$i][0]);
@@ -78,6 +77,6 @@ function fTime($time, $language, $languages, $gran) {
          }
     }
 
-    $relative = ($diff > 0) ? $languages[$language]['meta']['before_now'] : $languages[$language]['meta']['after_now'];
+    $relative = ($diff > 0) ? $language['meta']['before_now'] : $language['meta']['after_now'];
     return str_replace('|:phrase|', $phrase, $relative);
 }
