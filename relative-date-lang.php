@@ -11,7 +11,7 @@ $languages = array(
         'y'     => array('year','years'),
         'meta'  => array(
                     'position'  => 'end',
-                    'earlier'   => 'left',
+                    'earlier'   => 'from now',
                     'later'     => 'ago'
                     )
         ),
