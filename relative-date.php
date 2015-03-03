@@ -23,37 +23,37 @@ function fTime($time, $language, $languages, $gran) {
     $d[0] = array(
                 1,
                 $languages[$language]['sec'][0],
-                $languages[$language]['sec'][1]
+                array_pop($languages[$language]['sec'])
                 );
     $d[1] = array(
                 60,
                 $languages[$language]['min'][0],
-                $languages[$language]['min'][1]
+                array_pop($languages[$language]['min'])
                 );
     $d[2] = array(
                 3600,
                 $languages[$language]['h'][0],
-                $languages[$language]['h'][1]
+                array_pop($languages[$language]['h'])
                 );
     $d[3] = array(
                 86400,
                 $languages[$language]['d'][0],
-                $languages[$language]['d'][1]
+                array_pop($languages[$language]['d'])
                 );
     $d[4] = array(
                 604800,
                 $languages[$language]['w'][0],
-                $languages[$language]['w'][1]
+                array_pop($languages[$language]['w'])
                 );
     $d[5] = array(
                 2592000,
                 $languages[$language]['m'][0],
-                $languages[$language]['m'][1]
+                array_pop($languages[$language]['m'])
                 );
     $d[6] = array(
                 31104000,
                 $languages[$language]['y'][0],
-                $languages[$language]['y'][1]
+                array_pop($languages[$language]['y'])
                 );
 
 
