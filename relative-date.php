@@ -1,12 +1,4 @@
 <?php
-/**
- *  Converts your absolute date (and time) in something relative and
- *  more readable, like e.g. 2 months 3 days ago
- *  Add this relative-datetime.php to your 'site/plugins/' folder.
- *  Then use it on any date ield, e.g.: $page->published()->relative()
- *  You can include an optional parameter to define the granuality of the
- *  relative time.
- */
 
 field::$methods['relative'] = function($field, $gran=-1) {
     if (count(site()->languages()) < 1)
