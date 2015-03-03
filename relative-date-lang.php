@@ -31,4 +31,20 @@ $languages = array(
                     )
         ),
 
+    'es' => array(
+        'sec'   => array('segundo','segundos'),
+        'min'   => array('minuto','minutos'),
+        'h'     => array('hora','horas'),
+        'd'     => array('día','días'),
+        'w'     => array('semana','semanas'),
+        'm'     => array('mes','meses'),
+        'y'     => array('año','años'),
+        'meta'  => array(
+                    'position'  => 'begin',
+                    'earlier'   => 'dentro de',
+                    'later'     => 'hace'
+                    )
+        ),
+
   );
+

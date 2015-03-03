@@ -4,7 +4,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 Converts your absolute date (and time) in something relative and more readable, like e.g. 2 months 3 days ago.
 
 # Installation & Usage
-1. Add the ```relative-date.php``` and ```relative-date-lang.php``` to your ```site/plugins/``` folder. You can also move them to a subfolder (e.g. called ```relative-date```) within the ```plugins```directory.
+1. Add the ```relative-date.php``` and ```relative-date-lang.php``` to your ```site/plugins/`` folder. You can also move them to a subfolder (e.g. called ```relative-date```) within the ```plugins```directory.
 2. Then use it on any date field, e.g.: $page->published()->relative()
 
 # Languages supported
@@ -12,6 +12,7 @@ So far this plugin supports:
 
 - English
 - German
+- Spanish
 
 If you can help with other languages, please open up an issue. The following information is necessary:
 
