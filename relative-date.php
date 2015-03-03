@@ -5,47 +5,25 @@ field::$methods['relative'] = function($field, $gran=-1) {
         $language = 'en';
     else
         $language = site()->language()->code();
+
+        /* test if current language is supported */
+        // if (!in_array()) $language = 'en';
+
     $field->value = ftime($field->page->date(false, $field->key), $language, $gran);
     return $field;
 };
 
 function fTime($time, $language, $gran=-1) {
 
-    $languages = array(
-        'en' => array(
-            array('second','seconds'),
-            array('minute','minutes'),
-            array('hour','hours'),
-            array('day','days'),
-            array('week','weeks'),
-            array('month','months'),
-            array('year','years'),
-            'ago',
-            'left',
-            'AFTER'
-            ),
-        'de' => array(
-            array('Sekunde','Sekunden'),
-            array('Minute','Minuten'),
-            array('Stunde','Stunden'),
-            array('Tag','Tagen'),
-            array('Woche','Wochen'),
-            array('Monat','Monaten'),
-            array('Jahr','Jahren'),
-            'vor',
-            'noch',
-            'BEFORE'
-            )
-      );
+    include('relative-date-lang.php');
 
-
-    $d[0] = array(1,$languages[$language][0][0],$languages[$language][0][1]);
-    $d[1] = array(60,$languages[$language][1][0],$languages[$language][1][1]);
-    $d[2] = array(3600,$languages[$language][2][0],$languages[$language][2][1]);
-    $d[3] = array(86400,$languages[$language][3][0],$languages[$language][3][1]);
-    $d[4] = array(604800,$languages[$language][4][0],$languages[$language][4][1]);
-    $d[5] = array(2592000,$languages[$language][5][0],$languages[$language][5][1]);
-    $d[6] = array(31104000,$languages[$language][6][0],$languages[$language][6][1]);
+    $d[0] = array(1,$languages[$language]['sec'][0],$languages[$language]['sec'][1]);
+    $d[1] = array(60,$languages[$language]['min'][0],$languages[$language]['min'][1]);
+    $d[2] = array(3600,$languages[$language]['h'][0],$languages[$language]['h'][1]);
+    $d[3] = array(86400,$languages[$language]['d'][0],$languages[$language]['d'][1]);
+    $d[4] = array(604800,$languages[$language]['w'][0],$languages[$language]['w'][1]);
+    $d[5] = array(2592000,$languages[$language]['m'][0],$languages[$language]['m'][1]);
+    $d[6] = array(31104000,$languages[$language]['y'][0],$languages[$language]['y'][1]);
 
     $w = array();
 
@@ -84,10 +62,12 @@ function fTime($time, $language, $gran=-1) {
          }
     }
 
-    $relative = ($diff>0)?$languages[$language][7]:$languages[$language][8];
-    if ($languages[$language][9]=='BEFORE') :
+    $relative = ($diff>0)?$languages[$language]['meta']['earlier']:$languages[$language]['meta']['later'];
+    if ($languages[$language]['meta']['position'] == 'begin') :
         return $relative.' '.$return;
-    else :
+    elseif ($languages[$language]['meta']['position'] == 'end') :
         return $return.$relative;
+    else :
+        return $return;
     endif;
 }
