@@ -74,12 +74,5 @@ function fTime($time, $language, $languages) {
     }
 
     $relative = ($diff > 0) ? $languages[$language]['meta']['later'] : $languages[$language]['meta']['earlier'];
-
-    if ($languages[$language]['meta']['position'] == 'begin') :
-        return $relative.' '.$phrase;
-    elseif ($languages[$language]['meta']['position'] == 'end') :
-        return $phrase.''.$relative;
-    else :
-        return $phrase;
-    endif;
+    return str_replace('|:phrase|', $phrase, $relative);
 }
