@@ -73,6 +73,6 @@ function fTime($time, $language, $languages) {
          }
     }
 
-    $relative = ($diff > 0) ? $languages[$language]['meta']['later'] : $languages[$language]['meta']['earlier'];
+    $relative = ($diff > 0) ? $languages[$language]['meta']['before_now'] : $languages[$language]['meta']['after_now'];
     return str_replace('|:phrase|', $phrase, $relative);
 }

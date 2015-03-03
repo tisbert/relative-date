@@ -10,8 +10,8 @@ $languages = array(
         'm'     => array('month','months'),
         'y'     => array('year','years'),
         'meta'  => array(
-                    'earlier'   => '|:phrase| from now ',
-                    'later'     => '|:phrase| ago'
+                    'after_now'     => '|:phrase| from now ',
+                    'before_now'    => '|:phrase| ago'
                     )
         ),
     'de' => array(
@@ -23,8 +23,8 @@ $languages = array(
         'm'     => array('Monat','Monaten'),
         'y'     => array('Jahr','Jahren'),
         'meta'  => array(
-                    'earlier'   => 'in |:phrase|',
-                    'later'     => 'vor |:phrase|'
+                    'after_now'     => 'in |:phrase|',
+                    'before_now'    => 'vor |:phrase|'
                     )
         ),
     'es' => array(
@@ -36,8 +36,8 @@ $languages = array(
         'm'     => array('mes','meses'),
         'y'     => array('año','años'),
         'meta'  => array(
-                    'earlier'   => 'dentro de |:phrase|',
-                    'later'     => 'hace |:phrase|'
+                    'after_now'     => 'dentro de |:phrase|',
+                    'before_now'    => 'hace |:phrase|'
                     )
         ),
     'fr' => array(
@@ -49,8 +49,8 @@ $languages = array(
         'm'     => array('mois','mois'),
         'y'     => array('an','ans'),
         'meta'  => array(
-                    'earlier'   => 'dans |:phrase|',
-                    'later'     => 'il y a |:phrase|'
+                    'after_now'     => 'dans |:phrase|',
+                    'before_now'    => 'il y a |:phrase|'
                     )
         ),
 
