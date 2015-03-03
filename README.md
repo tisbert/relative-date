@@ -1,4 +1,4 @@
-# Kirby 2 - Relative Date Plugin
+# Kirby 2 - Relative Date Plugin v0.3
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, like e.g. 2 months 3 days ago.
 
 # Installation & Usage
@@ -21,17 +21,6 @@ c::set('relativedate.length', 4);
 $page->published()->relative(4);
 ```
 
-# Languages supported
-So far this plugin supports:
-
-- English
-- German
-- Spanish
-- French
-- Italian
-
-If you can help with other languages, please open up an issue. The following information is necessary:
-
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
 
@@ -39,3 +28,12 @@ In addition, if you think a language is missing and you can help, please provide
 - Words (singular & plural) for second, minute, hour, day, week, month and year
 - Terms that express A) that date & time are in the future (e.g. "1 hour from now") and B) that date & time are in the past (e.g. "3 days ago")
 - Where to put these terms in relation to the date/time-phrase (before, after, in between?)
+
+# Languages supported
+
+- English (en)
+- French (fr)
+- German (de)
+- Italian (it)
+- Spanish (es)
+- Thai (th)

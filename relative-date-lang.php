@@ -66,6 +66,18 @@ $languages = array(
                     'before_now'    => 'tra |:phrase|'
                     )
         ),
-
+    'th' => array(
+        'sec'   => array('วินาที','วินาที'),
+        'min'   => array('นาที','นาที'),
+        'h'     => array('ชั่วโมง','ชั่วโมง'),
+        'd'     => array('วัน','วัน'),
+        'w'     => array('สัปดาห์','สัปดาห์'),
+        'm'     => array('เดือน','เดือน'),
+        'y'     => array('ปี','ปี'),
+        'meta'  => array(
+                    'after_now'     => '|:phrase| ที่แล้ว',
+                    'before_now'    => '|:phrase| ที่แล้ว'
+                    )
+        ),
   );
 
