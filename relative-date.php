@@ -1,6 +1,6 @@
 <?php
 
-field::$methods['relative'] = function($field) {
+field::$methods['relative'] = function($field, $gran = false) {
     include('relative-date-lang.php');
 
     if (count(site()->languages()) < 1)
@@ -11,11 +11,13 @@ field::$methods['relative'] = function($field) {
     if (!array_key_exists($language, $languages))
         $language = 'en';
 
-    $field->value = ftime($field->page->date(false, $field->key), $language, $languages);
+    if ($gran == false) $gran = c::get('relativedate.length', 2);
+
+    $field->value = ftime($field->page->date(false, $field->key), $language, $languages, $gran);
     return $field;
 };
 
-function fTime($time, $language, $languages) {
+function fTime($time, $language, $languages, $gran) {
 
 
     $d[0] = array(
@@ -62,6 +64,7 @@ function fTime($time, $language, $languages) {
     $diff = ($now-$time);
     $secondsLeft = $diff;
     $stopat = 0;
+    $elements = 0;
 
     for($i=6; $i>0; $i--)
     {
@@ -70,6 +73,8 @@ function fTime($time, $language, $languages) {
          if($dateEl[$i]!=0)
          {
             $phrase.= abs($dateEl[$i]) . " " . (($dateEl[$i]>1) ? $d[$i][2] : $d[$i][1]) ." ";
+            $elements++;
+            if ($elements >= $gran) break;
          }
     }
 

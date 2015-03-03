@@ -7,6 +7,19 @@ Converts your absolute date (and time) in something relative and more readable, 
 1. Add the ```relative-date.php``` and ```relative-date-lang.php``` to your ```site/plugins/`` folder. You can also move them to a subfolder (e.g. called ```relative-date```) within the ```plugins```directory.
 2. Then use it on any date field, e.g.: ```$page->published()->relative()```
 
+# Options
+You can define how many date/time elements the phrase should entail. The default is 2 elements ('1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in tow ways:
+
+**globally in your ```sites/config/config.php```:**
+```php
+c::set('relativedate.length', 4);
+```
+
+**On a per case basis:**
+```php
+$page->published()->relative(4);
+```
+
 # Languages supported
 So far this plugin supports:
 
