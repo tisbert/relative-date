@@ -4,12 +4,12 @@ field::$methods['relative'] = function($field, $gran = false) {
     include('relative-date-lang.php');
 
     if (count(site()->languages()) < 1)
-        $language = 'en';
+        $language = c::get('relativedate.default', 'en');
     else
         $language = site()->language()->code();
 
     if (!array_key_exists($language, $languages))
-        $language = 'en';
+        $language = c::get('relativedate.default', 'en');
 
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 

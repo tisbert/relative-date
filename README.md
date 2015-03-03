@@ -21,6 +21,12 @@ c::set('relativedate.length', 4);
 $page->published()->relative(4);
 ```
 
+**You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:**
+
+```
+c::set('relativedate.default', 'ja');
+```
+
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
 
