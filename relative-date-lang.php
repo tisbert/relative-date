@@ -66,6 +66,19 @@ $languages = array(
                     'before_now'    => 'tra |:phrase|'
                     )
         ),
+    'ja' => array(
+        'sec'   => array('秒','秒'),
+        'min'   => array('分','分'),
+        'h'     => array('時間','時間'),
+        'd'     => array('日','日'),
+        'w'     => array('週間','週間'),
+        'm'     => array('ヶ月','ヶ月'),
+        'y'     => array('年','年'),
+        'meta'  => array(
+                    'after_now'     => '今から |:phrase|',
+                    'before_now'    => '|:phrase| 前'
+                    )
+        ),
     'sv' => array(
         'sec'   => array('sekund','sekunder'),
         'min'   => array('minut','minuter'),
