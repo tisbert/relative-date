@@ -15,7 +15,6 @@ $languages = array(
                     'later'     => 'ago'
                     )
         ),
-
     'de' => array(
         'sec'   => array('Sekunde','Sekunden'),
         'min'   => array('Minute','Minuten'),
@@ -30,7 +29,6 @@ $languages = array(
                     'later'     => 'vor'
                     )
         ),
-
     'es' => array(
         'sec'   => array('segundo','segundos'),
         'min'   => array('minuto','minutos'),
@@ -43,6 +41,20 @@ $languages = array(
                     'position'  => 'begin',
                     'earlier'   => 'dentro de',
                     'later'     => 'hace'
+                    )
+        ),
+    'fr' => array(
+        'sec'   => array('seconde','secondes'),
+        'min'   => array('minute','minutes'),
+        'h'     => array('heure','heures'),
+        'd'     => array('jour','jours'),
+        'w'     => array('semaine','semaines'),
+        'm'     => array('mois','mois'),
+        'y'     => array('an','ans'),
+        'meta'  => array(
+                    'position'  => 'begin',
+                    'earlier'   => 'dans',
+                    'later'     => 'il y a'
                     )
         ),
 
