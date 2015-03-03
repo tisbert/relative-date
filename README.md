@@ -37,7 +37,8 @@ In addition, if you think a language is missing and you can help, please provide
 
 # Languages supported
 
-- English (en)
+- English (en) [default]
+- Dutch (nl)
 - French (fr)
 - German (de)
 - Italian (it)

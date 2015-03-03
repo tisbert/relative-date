@@ -79,6 +79,19 @@ $languages = array(
                     'before_now'    => '|:phrase| 前'
                     )
         ),
+    'nl' => array(
+        'sec'   => array('seconde','seconden'),
+        'min'   => array('minuut','minuten'),
+        'h'     => array('uur','uur'),
+        'd'     => array('dag','dagen'),
+        'w'     => array('week','weken'),
+        'm'     => array('maand','maanden'),
+        'y'     => array('jaar','jaar'),
+        'meta'  => array(
+                    'after_now'     => '|:phrase| vanaf nu',
+                    'before_now'    => '|:phrase| geleden'
+                    )
+        ),
     'sv' => array(
         'sec'   => array('sekund','sekunder'),
         'min'   => array('minut','minuter'),
