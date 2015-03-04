@@ -32,16 +32,18 @@ function fTime($time, $language, $gran) {
 
     /* Setting up mode-sesitive languages */
     if (array_key_exists('lang_'.$mode, $language))
-        $language = $language['lang_'.$mode];
+        $words = $language['lang_'.$mode];
+    else
+        $words = $language;
 
     /* Linking language variables to respective calculation elements */
-    $d[0] = array_merge( array(1),        $language['sec'] );
-    $d[1] = array_merge( array(60),       $language['min'] );
-    $d[2] = array_merge( array(3600),     $language['h'] );
-    $d[3] = array_merge( array(86400),    $language['d'] );
-    $d[4] = array_merge( array(604800),   $language['w'] );
-    $d[5] = array_merge( array(2592000),  $language['m'] );
-    $d[6] = array_merge( array(31104000), $language['sec'] );
+    $d[0] = array_merge( array(1),        $words['sec'] );
+    $d[1] = array_merge( array(60),       $words['min'] );
+    $d[2] = array_merge( array(3600),     $words['h'] );
+    $d[3] = array_merge( array(86400),    $words['d'] );
+    $d[4] = array_merge( array(604800),   $words['w'] );
+    $d[5] = array_merge( array(2592000),  $words['m'] );
+    $d[6] = array_merge( array(31104000), $words['sec'] );
 
 
     /* Calculating relative elements */
@@ -84,6 +86,13 @@ function fTime($time, $language, $gran) {
             if ($elements >= $gran) break;
          }
     }
+
+    /* Making relative phrase fuzzy */
+    if (true && array_key_exists('fuzzy', $language)) :
+        foreach ($language['fuzzy'] as $fuzzyExp => $fuzzyTerm) :
+            preg_replace('/'.$fuzzyExp.'/', $fuzzyTerm, $phrase);
+        endforeach;
+    endif;
 
     return str_replace('|:phrase|', $phrase, $language['meta'][$mode]);
 }
