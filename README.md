@@ -49,6 +49,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 
 - English (en) *[default]*
 - Arabic (ar) *[experimental]*
+- Czech (cs)
 - Dutch (nl)
 - Finnish (fi)
 - French (fr)
@@ -69,6 +70,9 @@ In addition, if you think a language is missing, [let me know](https://github.co
 Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
 
 # Version history
+**v0.9**
+- Added Czech
+
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
 - Fixed Russian localization
