@@ -2,19 +2,24 @@
 
 field::$methods['relative'] = function($field, $gran = false) {
 
+    /* Checking if Kirby language config is enabled */
     if (count(site()->languages()) < 1)
         $locale = c::get('relativedate.default', 'en');
     else
         $locale = site()->language()->code();
 
+    /* Checking if current language is supported */
     if (!file_exists(__DIR__.'/lang/'.$locale.'.php'))
         $locale = c::get('relativedate.default', 'en');
 
+    /* Getting the language array */
     $language = require 'lang/'.$locale.'.php';
 
+    /* Fallback to global length config if not provided */
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 
-    $field->value = ftime($field->page->date(false, $field->key), $language, $gran);
+    $time = $field->page->date(false, $field->key);
+    $field->value = ftime($time, $language, $gran);
     return $field;
 };
 
@@ -30,34 +35,13 @@ function fTime($time, $language, $gran) {
         $language = $language['lang_'.$mode];
 
     /* Linking language variables to respective calculation elements */
-    $d[0] = array_merge(
-                array(1),
-                $language['sec']
-            );
-    $d[1] = array_merge(
-                array(60),
-                $language['min']
-            );
-    $d[2] = array_merge(
-                array(3600),
-                $language['h']
-            );
-    $d[3] = array_merge(
-                array(86400),
-                $language['d']
-            );
-    $d[4] = array_merge(
-                array(604800),
-                $language['w']
-            );
-    $d[5] = array_merge(
-                array(2592000),
-                $language['m']
-            );
-    $d[6] = array_merge(
-                array(31104000),
-                $language['sec']
-            );
+    $d[0] = array_merge( array(1),        $language['sec'] );
+    $d[1] = array_merge( array(60),       $language['min'] );
+    $d[2] = array_merge( array(3600),     $language['h'] );
+    $d[3] = array_merge( array(86400),    $language['d'] );
+    $d[4] = array_merge( array(604800),   $language['w'] );
+    $d[5] = array_merge( array(2592000),  $language['m'] );
+    $d[6] = array_merge( array(31104000), $language['sec'] );
 
 
     /* Calculating relative elements */
