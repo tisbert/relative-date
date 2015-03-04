@@ -11,14 +11,5 @@ return array(
     'meta'  => array(
                 'after_now'     => 'in |:phrase|',
                 'before_now'    => 'vor |:phrase|'
-                ),
-
-
-    'fuzzy' => array(
-            'after_now' => array(
-                ),
-            'before_now' => array(
-                'gestern' => '/^(1 Tag(.*)|[1-2]?[1-9] Stunde(n)?(.*))/',
-                ),
-            )
+                )
     );

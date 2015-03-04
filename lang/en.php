@@ -11,15 +11,5 @@ return array(
     'meta'  => array(
                 'after_now'     => '|:phrase| from now',
                 'before_now'    => '|:phrase| ago'
-                ),
-
-    'fuzzy' => array(
-            'after_now' => array(
-                'tomorrow' => '/^[1-2]?[1-9] hour(s)?(.*)/',
-                ),
-            'before_now' => array(
-                'less than a minute ago' => '/^[1-5]?[1-9] second(s)?(.*)/',
-                'yesterday' => '/^(1 day(.*)|[1-2]?[1-9] hour(s)?(.*))/',
-                ),
-            )
+                )
     );

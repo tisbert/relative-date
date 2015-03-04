@@ -1,5 +1,9 @@
-# Kirby 2 - Relative Date Plugin v0.8
-Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, like e.g. 2 months 3 days ago.
+# Kirby 2 - Relative Date Plugin v0.9
+Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
+```
+2 months 3 days ago
+5 hours 47 minutes 18 seconds from now
+``` 
 
 # Installation & Usage
 1. [Download](https://github.com/distantnative/kirby-relativedate/archive/develop.zip) the current release.
@@ -12,7 +16,7 @@ $page->published()->relative()
 To **update** to a higher version just replace the same files by their newer version.
 
 # Options
-You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in tow ways:
+You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in two ways:
 
 **Globally in your ```sites/config/config.php```:**
 ```php
@@ -30,10 +34,27 @@ $page->published()->relative(4);
 c::set('relativedate.default', 'ja');
 ```
 
+# Fuzzy expressions <a id="fuzzy"></a>
+There is a way to get more fuzzy expressions, e.g. ```yesterday```instead of ```17 hours 40 minutes ago```. For that you need to set up the fuzzy expressions, which you want to use, in your ```site/config/config.php```, e.g.:
+
+```php
+c::set('relativedate.fuzzy', array(
+    /* English (en) */
+    'en' => array(
+        'tomorrow' => '/^[1-2]?[1-9] hour(s)?(.*)/',
+        'yesterday' => '/^(1 day(.*)|[1-2]?[1-9] hour(s)?(.*))/',
+        ),
+    ));
+``` 
+ 
+ The config item consists of an array in which each language gets its own array of fuzzy expressions. Each fuzzy expression consists of a key-value pair. They key represents the fuzzy term that you wanna have in your displayed result at the end, the value containts a regular expression of what is to replace.
+
+ You can find a collection of fuzzy expression rules for different languages in the ```fuzzy-examples.php```file.
+
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
 
-In addition, if you think a language is missing and you can help, please provide the following information:
+In addition, if you think a language is missing, [let me know](https://github.com/distantnative/kirby-relativedate/issues/11). And if you can even help with the translation, please provide the following information:
 - Words (singular & plural) for second, minute, hour, day, week, month and year
 - Terms that express A) that date & time are in the future (e.g. "1 hour from now") and B) that date & time are in the past (e.g. "3 days ago")
 - Where to put these terms in relation to the date/time-phrase (before, after, in between?)
@@ -60,26 +81,6 @@ In addition, if you think a language is missing and you can help, please provide
 - Turkish (tr)
 
 Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
-
-# Fuzzy expressions <a id="fuzzy"></a>
-Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
-
-```php
-c::set('relativedate.fuzzy', array(
-    'FUZZYEXPRESSION',
-    'FUZZYEXPRESSION',
-    ));
-```
-
-Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions identifiers, which you want to be activated. At the moment the following fuzzy expression identifiers are available for some languages:
-
-**English:**
-- ```less than a minute ago```
-- ```yesterday```
-- ```tomorrow```
-
-**German:**
-- ```gestern```
 
 # Version history
 **v0.8**

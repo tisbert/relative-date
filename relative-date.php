@@ -19,11 +19,11 @@ field::$methods['relative'] = function($field, $gran = false) {
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 
     $time = $field->page->date(false, $field->key);
-    $field->value = ftime($time, $language, $gran);
+    $field->value = ftime($time, $language, $locale, $gran);
     return $field;
 };
 
-function fTime($time, $language, $gran) {
+function fTime($time, $language, $locale, $gran) {
     $now = time();
     $diff = ($now-$time);
 
@@ -93,11 +93,9 @@ function fTime($time, $language, $gran) {
 
     /* Making relative phrase fuzzy */
     $fuzzy = c::get('relativedate.fuzzy', array());
-    if (count($fuzzy) > 0 &&
-        array_key_exists('fuzzy', $language)) :
-        foreach ($fuzzy as $fuzzyRule) :
-            if (array_key_exists($fuzzyRule,$language['fuzzy'][$mode]))
-                $return = preg_replace($language['fuzzy'][$mode][$fuzzyRule], $fuzzyRule, $return);
+    if (array_key_exists($locale, $fuzzy)) :
+        foreach ($fuzzy[$locale] as $fuzzyTerm => $fuzzyRule) :
+            $return = preg_replace($fuzzyRule, $fuzzyTerm, $return);
         endforeach;
     endif;
 
