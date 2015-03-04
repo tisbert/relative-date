@@ -15,7 +15,7 @@ $page->published()->relative()
 To **update** to a higher version just replace the same files by their newer version.
 
 # Options
-You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in tow ways:
+You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in two ways:
 
 **Globally in your ```sites/config/config.php```:**
 ```php
