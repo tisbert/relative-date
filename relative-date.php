@@ -24,9 +24,10 @@ field::$methods['relative'] = function($field, $threshold = false, $gran = false
     $time = $field->page->date(false, $field->key);
 
     /* only convert to relative if time differnce no exceeds threshold */
-    if ($threshold == false || 
+    if ($threshold == false ||
         abs($time - time()) <= $threshold) :
         $field->value = ftime($time, $language, $gran);
+    endif;
 
     return $field;
 };
