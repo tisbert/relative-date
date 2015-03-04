@@ -88,7 +88,7 @@ function fTime($time, $language, $gran) {
     }
 
     /* Making relative phrase fuzzy */
-    if (true && array_key_exists('fuzzy', $language)) :
+    if (c::get('relativedate.fuzzy', false) && array_key_exists('fuzzy', $language)) :
         foreach ($language['fuzzy'] as $fuzzyExp => $fuzzyTerm) :
             preg_replace('/'.$fuzzyExp.'/', $fuzzyTerm, $phrase);
         endforeach;
