@@ -13,7 +13,6 @@ return array(
                 'before_now'    => '|:phrase| ago'
                 ),
 
-
     'fuzzy' => array(
             'after_now' => array(
                 'tomorrow' => '/^[1-2]?[1-9] hour(s)?(.*)/',

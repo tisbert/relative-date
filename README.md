@@ -49,7 +49,29 @@ In addition, if you think a language is missing and you can help, please provide
 - Swedish (sv)
 - Thai (th)
 
+# Fuzzy expressions <a id="fuzzy"></a>
+Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
+
+```php
+c::set('relativedate.fuzzy', array(
+    'FUZZYEXPRESSION',
+    'FUZZYEXPRESSION',
+    ));
+```
+
+Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions identifiers, which you want to be activated. At the moment the following fuzzy expression identifiers are available for some languages:
+
+**English:**
+- ```less than a minute ago```
+- ```yesterday```
+- ```tomorrow```
+
+**German:**
+- ```gestern```
+
 # Version history
 
 **v0.7**
-- Added basic fuzzy expressions ('yesterday', 'this week', 'less then a minute') for English
+- Added basic [fuzzy expression support](#fuzzy) 
+- Fixed wrong language matching for years
+- Code simplifications
