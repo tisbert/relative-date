@@ -8,6 +8,8 @@ field::$methods['relative'] = function($field, $gran = false) {
     else
         $locale = site()->language()->code();
 
+    $locale = 'ru';
+
     /* Checking if current language is supported */
     if (!file_exists(__DIR__.'/lang/'.$locale.'.php'))
         $locale = c::get('relativedate.default', 'en');
@@ -58,26 +60,27 @@ function fTime($time, $language, $gran) {
          $secondsLeft -= ($dateEl[$i] * $d[$i][0]);
          if($dateEl[$i]!=0)
          {
-            /* Count > 1 >> some kind of plural */
-            if($dateEl[$i]>1) :
-                if (count($d[$i])>3) :
-                    /* Go through differnt plurals */
-                    foreach (array_slice($d[$i],2) as $term) :
-                        if (is_array($term)) {
-                            /* Specific plural in count rage? */
-                            if ($term[0]<=$dateEl[$i]) $string = $term[1]." ";
-                        } else {
-                            /* Count is higher as all specific plural */
-                            $string = $term." ";
-                        }
-                    endforeach;
-                /* language only has singular/plural >> plural */
-                else :
-                    $string = array_pop($d[$i])." ";
-                endif;
-            /* Count = 1 >> simple singular */
-            else :
+            /* only has one form */
+            if (count($d[$i]) == 2) :
                 $string = $d[$i][1]." ";
+
+            /* simple singular/plural */
+            elseif (count($d[$i]) == 3 && !is_array($d[$i][1])) :
+                if($dateEl[$i]>1)
+                    $string = $d[$i][2]." ";
+                else
+                    $string = $d[$i][1]." ";
+
+            /* plurals with specific rules */
+            else:
+                foreach (array_slice($d[$i],1) as $term) :
+                    if (is_array($term)) {
+                        $condition = 'return '.str_replace('|:n|', $dateEl[$i], $term[0]).';';
+                        if (eval($condition)) {
+                            $string = $term[1]." ";
+                        }
+                    }
+                endforeach;
             endif;
 
             $phrase.= str_replace('|:count|', abs($dateEl[$i]), $string);

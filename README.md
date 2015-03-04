@@ -71,6 +71,9 @@ Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions ident
 - ```gestern```
 
 # Version history
+**v0.8**
+- Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
+- Fixed Russian localization
 
 **v0.7**
 - Added basic [fuzzy expression support](#fuzzy) 
