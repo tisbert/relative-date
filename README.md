@@ -23,7 +23,7 @@ $page->published()->relative(4);
 
 **You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:**
 
-```
+```php
 c::set('relativedate.default', 'ja');
 ```
 
