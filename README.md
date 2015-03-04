@@ -106,8 +106,9 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 # Version history
 **v0.9**
 - Added [threshold option](#threshold)
-- Rewritten [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
-- Added Czech, Bulgarian, Chinese, Chinese Taiwan
+- Complete rewrite [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
+- Added Czech, Bulgarian, Chinese, Chinese Taiwan support
+- Improved minor things on Thai translation
 
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
