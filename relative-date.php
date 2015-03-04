@@ -43,7 +43,7 @@ function fTime($time, $language, $gran) {
     $d[3] = array_merge( array(86400),    $words['d'] );
     $d[4] = array_merge( array(604800),   $words['w'] );
     $d[5] = array_merge( array(2592000),  $words['m'] );
-    $d[6] = array_merge( array(31104000), $words['sec'] );
+    $d[6] = array_merge( array(31104000), $words['y'] );
 
 
     /* Calculating relative elements */
