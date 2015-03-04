@@ -85,6 +85,7 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 
 # Version history
 **v0.9**
+- Rewritten fuzzy expression logic, located it to ```site/config/config.php```
 - Added Czech
 
 **v0.8**
