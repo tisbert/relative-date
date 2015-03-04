@@ -74,7 +74,7 @@ Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions ident
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
 - Fixed Russian localization
-- Added support for Norwegian
+- Added support for Norwegian, Polish
 
 **v0.7**
 - Added basic [fuzzy expression support](#fuzzy) 
