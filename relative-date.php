@@ -8,8 +8,6 @@ field::$methods['relative'] = function($field, $gran = false) {
     else
         $locale = site()->language()->code();
 
-    $locale = 'ru';
-
     /* Checking if current language is supported */
     if (!file_exists(__DIR__.'/lang/'.$locale.'.php'))
         $locale = c::get('relativedate.default', 'en');
