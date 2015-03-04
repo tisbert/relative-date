@@ -96,7 +96,7 @@ function fTime($time, $language, $gran) {
         array_key_exists('fuzzy', $language)) :
         foreach ($fuzzy as $fuzzyRule) :
             if (array_key_exists($fuzzyRule,$language['fuzzy'][$mode]))
-                preg_replace('/'.$language['fuzzy'][$mode][$fuzzyRule].'/', $fuzzyRule, $return);
+                $return = preg_replace($language['fuzzy'][$mode][$fuzzyRule], $fuzzyRule, $return);
         endforeach;
     endif;
 
