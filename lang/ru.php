@@ -1,34 +1,44 @@
 <?php
+$rule1 = '|:n|%10==1 && |:n|%100!=11';
+$rule2 = '|:n|%10>=2 && |:n|%10<=4 && (|:n|%100<10 || |:n|%100>=20)';
+$rule3 = 'true';
 
 return array(
     'sec'   => array(
-                        '1 секунду',
-                array(4,'|:count| секунды'),
-                        '|:count| секунд'),
+                array($rule1, '|:count| секунду'),
+                array($rule2, '|:count| секунды'),
+                array($rule3, '|:count| секунд'),
+            ),
     'min'   => array(
-                        '1 минуту',
-                array(4,'|:count| минуты'),
-                        '|:count| минут'),
+                array($rule1, '|:count| минуту'),
+                array($rule2, '|:count| минуты'),
+                array($rule3, '|:count| минут'),
+            ),
     'h'     => array(
-                        '1 час',
-                array(4,'|:count| часа'),
-                        '|:count| часов'),
+                array($rule1, '|:count| час'),
+                array($rule2, '|:count| часа'),
+                array($rule3, '|:count| часов'),
+            ),
     'd'     => array(
-                        '1 день',
-                array(4,'|:count| дня'),
-                        '|:count| дней'),
+                array($rule1, '|:count| день'),
+                array($rule2, '|:count| дня'),
+                array($rule3, '|:count| дней'),
+            ),
     'w'     => array(
-                        '1 неделю',
-                array(4,'|:count| недели'),
-                        '|:count| недель'),
+                array($rule1, '|:count| неделю'),
+                array($rule2, '|:count| недели'),
+                array($rule3, '|:count| недель'),
+            ),
     'm'     => array(
-                        '1 месяц',
-                array(4,'|:count| месяца'),
-                        '|:count| месяцев'),
+                array($rule1, '|:count| месяц'),
+                array($rule2, '|:count| недели'),
+                array($rule3, '|:count| недель'),
+            ),
     'y'     => array(
-                        '1 год',
-                array(4,'|:count| года'),
-                        '|:count| лет'),
+                array($rule1, '|:count| год'),
+                array($rule2, '|:count| года'),
+                array($rule3, '|:count| лет'),
+            ),
     'meta'  => array(
                 'after_now'     => 'через |:phrase|',
                 'before_now'    => '|:phrase| назад'
