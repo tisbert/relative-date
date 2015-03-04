@@ -1,4 +1,4 @@
-# Kirby 2 - Relative Date Plugin v0.5
+# Kirby 2 - Relative Date Plugin v0.6
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, like e.g. 2 months 3 days ago.
 
 # Installation & Usage

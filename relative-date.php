@@ -19,7 +19,17 @@ field::$methods['relative'] = function($field, $gran = false) {
 };
 
 function fTime($time, $language, $gran) {
+    $now = time();
+    $diff = ($now-$time);
 
+    /* Relative mode: $time is past or future? */
+    $mode = ($diff > 0) ? 'before_now' : 'after_now';
+
+    /* Setting up mode-sesitive languages */
+    if (array_key_exists('lang_'.$mode, $language))
+        $language = $language['lang_'.$mode];
+
+    /* Linking language variables to respective calculation elements */
     $d[0] = array_merge(
                 array(1),
                 $language['sec']
@@ -50,10 +60,9 @@ function fTime($time, $language, $gran) {
             );
 
 
+    /* Calculating relative elements */
     $dateEl = array();
     $phrase = "";
-    $now = time();
-    $diff = ($now-$time);
     $secondsLeft = $diff;
     $stopat = 0;
     $elements = 0;
@@ -63,18 +72,24 @@ function fTime($time, $language, $gran) {
          $secondsLeft -= ($dateEl[$i] * $d[$i][0]);
          if($dateEl[$i]!=0)
          {
+            /* Count > 1 >> some kind of plural */
             if($dateEl[$i]>1) :
                 if (count($d[$i])>3) :
+                    /* Go through differnt plurals */
                     foreach (array_slice($d[$i],2) as $term) :
                         if (is_array($term)) {
+                            /* Specific plural in count rage? */
                             if ($term[0]<=$dateEl[$i]) $string = $term[1]." ";
                         } else {
+                            /* Count is higher as all specific plural */
                             $string = $term." ";
                         }
                     endforeach;
+                /* language only has singular/plural >> plural */
                 else :
                     $string = array_pop($d[$i])." ";
                 endif;
+            /* Count = 1 >> simple singular */
             else :
                 $string = $d[$i][1]." ";
             endif;
@@ -86,6 +101,5 @@ function fTime($time, $language, $gran) {
          }
     }
 
-    $relative = ($diff > 0) ? $language['meta']['before_now'] : $language['meta']['after_now'];
-    return str_replace('|:phrase|', $phrase, $relative);
+    return str_replace('|:phrase|', $phrase, $language['meta'][$mode]);
 }
