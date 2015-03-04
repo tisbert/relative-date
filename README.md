@@ -43,6 +43,7 @@ In addition, if you think a language is missing and you can help, please provide
 - German (de)
 - Italian (it)
 - Japanese (ja)
+- Portuguese (pt)
 - Russian (ru)
 - Spanish (es)
 - Swedish (sv)

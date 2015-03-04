@@ -9,7 +9,7 @@ return array(
     'm'     => array('|:count| month',  '|:count| months'),
     'y'     => array('|:count| year',   '|:count| years'),
     'meta'  => array(
-                'after_now'     => '|:phrase| from now ',
+                'after_now'     => '|:phrase| from now',
                 'before_now'    => '|:phrase| ago'
                 )
     );
