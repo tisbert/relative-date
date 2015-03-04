@@ -53,6 +53,8 @@ In addition, if you think a language is missing and you can help, please provide
 - Swedish (sv)
 - Thai (th)
 
+Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
+
 # Fuzzy expressions <a id="fuzzy"></a>
 Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
 
