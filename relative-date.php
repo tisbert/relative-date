@@ -75,7 +75,7 @@ function fTime($time, $language, $gran) {
                         }
                     endforeach;
                 else :
-                    $phrase.= $d[$i][2]." ";
+                    $phrase.= array_pop($d[$i])." ";
                 endif;
             else :
                 $phrase.= $d[$i][1]." ";
