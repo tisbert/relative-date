@@ -1,112 +1,44 @@
 <?php
-$singular_1['sec']  = 'секунду';
-$plural_24['sec']   = 'секунды';
-$plural_else['sec'] = 'секунд';
-
-$singular_1['min']  = 'минуту';
-$plural_24['min']   = 'минуты';
-$plural_else['min'] = 'минут';
-
-$singular_1['h']  = 'час';
-$plural_24['h']   = 'часа';
-$plural_else['h'] = 'часов';
-
-$singular_1['d']  = 'день';
-$plural_24['d']   = 'дня';
-$plural_else['d'] = 'дней';
-
-$singular_1['w']  = 'неделю';
-$plural_24['w']   = 'недели';
-$plural_else['w'] = 'недель';
-
-$singular_1['m']  = 'месяц';
-$plural_24['m']   = 'недели';
-$plural_else['m'] = 'недель';
-
-$singular_1['y']  = 'год';
-$plural_24['y']   = 'года';
-$plural_else['y'] = 'лет';
-
+$rule1 = '|:n|%10==1 && |:n|%100!=11';
+$rule2 = '|:n|%10>=2 && |:n|%10<=4 && (|:n|%100<10 || |:n|%100>=20)';
+$rule3 = '|:n|!=0';
 
 return array(
     'sec'   => array(
-                          '1 '       .$singular_1['sec'],
-                array(4,  '|:count| '.$plural_24['sec']),
-                array(20, '|:count| '.$plural_else['sec']),
-                array(21, '|:count| '.$singular_1['sec']),
-                array(24, '|:count| '.$plural_24['sec']),
-                array(30, '|:count| '.$plural_else['sec']),
-                array(31, '|:count| '.$singular_1['sec']),
-                array(34, '|:count| '.$plural_24['sec']),
-                array(40, '|:count| '.$plural_else['sec']),
-                array(41, '|:count| '.$singular_1['sec']),
-                array(44, '|:count| '.$plural_24['sec']),
-                array(50, '|:count| '.$plural_else['sec']),
-                array(51, '|:count| '.$singular_1['sec']),
-                array(54, '|:count| '.$plural_24['sec']),
-                          '|:count| '.$plural_else['sec']),
+                array($rule1, '|:count| секунду'),
+                array($rule2, '|:count| секунды'),
+                array($rule3, '|:count| секунд'),
+            ),
     'min'   => array(
-                          '1 '       .$singular_1['min'],
-                array(4,  '|:count| '.$plural_24['min']),
-                array(20, '|:count| '.$plural_else['min']),
-                array(21, '|:count| '.$singular_1['min']),
-                array(24, '|:count| '.$plural_24['min']),
-                array(30, '|:count| '.$plural_else['min']),
-                array(31, '|:count| '.$singular_1['min']),
-                array(34, '|:count| '.$plural_24['min']),
-                array(40, '|:count| '.$plural_else['min']),
-                array(41, '|:count| '.$singular_1['min']),
-                array(44, '|:count| '.$plural_24['min']),
-                array(50, '|:count| '.$plural_else['min']),
-                array(51, '|:count| '.$singular_1['min']),
-                array(54, '|:count| '.$plural_24['min']),
-                          '|:count| '.$plural_else['min']),
+                array($rule1, '|:count| минуту'),
+                array($rule2, '|:count| минуты'),
+                array($rule3, '|:count| минут'),
+            ),
     'h'     => array(
-                          '1 '       .$singular_1['h'],
-                array(4,  '|:count| '.$plural_24['h']),
-                array(20, '|:count| '.$plural_else['h']),
-                array(21, '|:count| '.$singular_1['h']),
-                          '|:count| '.$plural_24['h']),
+                array($rule1, '|:count| час'),
+                array($rule2, '|:count| часа'),
+                array($rule3, '|:count| часов'),
+            ),
     'd'     => array(
-                          '1 '       .$singular_1['d'],
-                array(4,  '|:count| '.$plural_24['d']),
-                          '|:count| '.$plural_else['d']),
+                array($rule1, '|:count| день'),
+                array($rule2, '|:count| дня'),
+                array($rule3, '|:count| дней'),
+            ),
     'w'     => array(
-                          '1 '       .$singular_1['w'],
-                array(4,  '|:count| '.$plural_24['w']),
-                          '|:count| '.$plural_else['w']),
+                array($rule1, '|:count| неделю'),
+                array($rule2, '|:count| недели'),
+                array($rule3, '|:count| недель'),
+            ),
     'm'     => array(
-                          '1 '       .$singular_1['m'],
-                array(4,  '|:count| '.$plural_24['m']),
-                          '|:count| '.$plural_else['m']),
+                array($rule1, '|:count| месяц'),
+                array($rule2, '|:count| недели'),
+                array($rule3, '|:count| недель'),
+            ),
     'y'     => array(
-                          '1 '       .$singular_1['y'],
-                array(4,  '|:count| '.$plural_24['y']),
-                array(20, '|:count| '.$plural_else['y']),
-                array(21, '|:count| '.$singular_1['y']),
-                array(24, '|:count| '.$plural_24['y']),
-                array(30, '|:count| '.$plural_else['y']),
-                array(31, '|:count| '.$singular_1['y']),
-                array(34, '|:count| '.$plural_24['y']),
-                array(40, '|:count| '.$plural_else['y']),
-                array(41, '|:count| '.$singular_1['y']),
-                array(44, '|:count| '.$plural_24['y']),
-                array(50, '|:count| '.$plural_else['y']),
-                array(51, '|:count| '.$singular_1['y']),
-                array(54, '|:count| '.$plural_24['y']),
-                array(60, '|:count| '.$plural_else['y']),
-                array(61, '|:count| '.$singular_1['y']),
-                array(64, '|:count| '.$plural_24['y']),
-                array(70, '|:count| '.$plural_else['y']),
-                array(71, '|:count| '.$singular_1['y']),
-                array(74, '|:count| '.$plural_24['y']),
-                array(80, '|:count| '.$plural_else['y']),
-                array(81, '|:count| '.$singular_1['y']),
-                array(84, '|:count| '.$plural_24['y']),
-                array(90, '|:count| '.$plural_else['y']),
-                array(91, '|:count| '.$singular_1['y']),
-                array(94, '|:count| '.$plural_24['y']),
-                          '|:count| '.$plural_else['y']),
+                array($rule1, '|:count| год'),
+                array($rule2, '|:count| года'),
+                array($rule3, '|:count| лет'),
+            ),
     'meta'  => array(
                 'after_now'     => 'через |:phrase|',
                 'before_now'    => '|:phrase| назад'
