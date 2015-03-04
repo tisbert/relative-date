@@ -16,19 +16,36 @@ $page->published()->relative()
 To **update** to a higher version just replace the same files by their newer version.
 
 # Options
+
+
+### Threshold <a id="threshold"></a>
+Sometimes you only want relative dates for dates that are not too far in the past/future, but not for dates really far away. In that case you can set a threshold (in seconds). Only dates on the range of that threshold from the current time will be displayed as relative dates.
+
+Globally in your ```sites/config/config.php```:
+```php
+c::set('relativedate.threshold', 604800);
+```
+
+On a per case basis:
+```php
+$page->published()->relative(604800);
+```
+
+### Length
 You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in two ways:
 
-**Globally in your ```sites/config/config.php```:**
+Globally in your ```sites/config/config.php```:
 ```php
 c::set('relativedate.length', 4);
 ```
 
-**On a per case basis:**
+On a per case basis:
 ```php
-$page->published()->relative(4);
+$page->published()->relative($threshold, 4);
 ```
 
-**You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:**
+### Default Language
+You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:
 
 ```php
 c::set('relativedate.default', 'ja');
@@ -85,7 +102,8 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 
 # Version history
 **v0.9**
-- Rewritten fuzzy expression logic, located it to ```site/config/config.php```
+- Added [threshold option](#threshold)
+- Rewritten [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
 - Added Czech
 
 **v0.8**
