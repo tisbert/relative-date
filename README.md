@@ -33,10 +33,30 @@ $page->published()->relative(4);
 c::set('relativedate.default', 'ja');
 ```
 
+# Fuzzy expressions <a id="fuzzy"></a>
+Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
+
+```php
+c::set('relativedate.fuzzy', array(
+    'FUZZYEXPRESSION',
+    'FUZZYEXPRESSION',
+    ));
+```
+
+Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions identifiers, which you want to be activated. At the moment the following fuzzy expression identifiers are available for some languages:
+
+**English:**
+- ```less than a minute ago```
+- ```yesterday```
+- ```tomorrow```
+
+**German:**
+- ```gestern```
+
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
 
-In addition, if you think a language is missing and you can help, please provide the following information:
+In addition, if you think a language is missing, [let me know](https://github.com/distantnative/kirby-relativedate/issues/11). And if you can even help with the translation, please provide the following information:
 - Words (singular & plural) for second, minute, hour, day, week, month and year
 - Terms that express A) that date & time are in the future (e.g. "1 hour from now") and B) that date & time are in the past (e.g. "3 days ago")
 - Where to put these terms in relation to the date/time-phrase (before, after, in between?)
@@ -63,26 +83,6 @@ In addition, if you think a language is missing and you can help, please provide
 - Turkish (tr)
 
 Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
-
-# Fuzzy expressions <a id="fuzzy"></a>
-Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
-
-```php
-c::set('relativedate.fuzzy', array(
-    'FUZZYEXPRESSION',
-    'FUZZYEXPRESSION',
-    ));
-```
-
-Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions identifiers, which you want to be activated. At the moment the following fuzzy expression identifiers are available for some languages:
-
-**English:**
-- ```less than a minute ago```
-- ```yesterday```
-- ```tomorrow```
-
-**German:**
-- ```gestern```
 
 # Version history
 **v0.8**
