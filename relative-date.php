@@ -1,7 +1,6 @@
 <?php
 
 field::$methods['relative'] = function($field, $gran = false) {
-    include('relative-date-lang.php');
 
     if (count(site()->languages()) < 1)
         $locale = c::get('relativedate.default', 'en');
@@ -15,47 +14,40 @@ field::$methods['relative'] = function($field, $gran = false) {
 
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 
-    $field->value = ftime($field->page->date(false, $field->key), $language, $languages, $gran);
+    $field->value = ftime($field->page->date(false, $field->key), $language, $gran);
     return $field;
 };
 
-function fTime($time, $language, $languages, $gran) {
+function fTime($time, $language, $gran) {
 
-    $d[0] = array(
-                1,
-                $language['sec'][0],
-                array_pop($language['sec'])
-                );
-    $d[1] = array(
-                60,
-                $language['min'][0],
-                array_pop($language['min'])
-                );
-    $d[2] = array(
-                3600,
-                $language['h'][0],
-                array_pop($language['h'])
-                );
-    $d[3] = array(
-                86400,
-                $language['d'][0],
-                array_pop($language['d'])
-                );
-    $d[4] = array(
-                604800,
-                $language['w'][0],
-                array_pop($language['w'])
-                );
-    $d[5] = array(
-                2592000,
-                $language['m'][0],
-                array_pop($language['m'])
-                );
-    $d[6] = array(
-                31104000,
-                $language['y'][0],
-                array_pop($language['y'])
-                );
+    $d[0] = array_merge(
+                array(1),
+                $language['sec']
+            );
+    $d[1] = array_merge(
+                array(60),
+                $language['min']
+            );
+    $d[2] = array_merge(
+                array(3600),
+                $language['h']
+            );
+    $d[3] = array_merge(
+                array(86400),
+                $language['d']
+            );
+    $d[4] = array_merge(
+                array(604800),
+                $language['w']
+            );
+    $d[5] = array_merge(
+                array(2592000),
+                $language['m']
+            );
+    $d[6] = array_merge(
+                array(31104000),
+                $language['sec']
+            );
 
 
     $dateEl = array();
@@ -71,7 +63,25 @@ function fTime($time, $language, $languages, $gran) {
          $secondsLeft -= ($dateEl[$i] * $d[$i][0]);
          if($dateEl[$i]!=0)
          {
-            $phrase.= abs($dateEl[$i]) . " " . (($dateEl[$i]>1) ? $d[$i][2] : $d[$i][1]) ." ";
+            $phrase.= abs($dateEl[$i]) . " ";
+
+            if($dateEl[$i]>1) :
+                if (count($d[$i])>3) :
+                    foreach (array_slice($d[$i],2) as $term) :
+                        if (is_array($term)) {
+                            if ($term[0]<=$dateEl[$i]) $phrase .= $term[1]." ";
+                        } else {
+                            $phrase .= $term." ";
+                        }
+                    endforeach;
+                else :
+                    $phrase.= $d[$i][2]." ";
+                endif;
+            else :
+                $phrase.= $d[$i][1]." ";
+            endif;
+
+            (($dateEl[$i]>1) ? $d[$i][2] : $d[$i][1]) ." ";
             $elements++;
             if ($elements >= $gran) break;
          }
