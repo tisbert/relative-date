@@ -2,31 +2,31 @@
 
 return array(
     'sec'   => array(
-                        '|:count| секунду',
+                        '1 секунду',
                 array(4,'|:count| секунды'),
                         '|:count| секунд'),
     'min'   => array(
-                        '|:count| минуту',
+                        '1 минуту',
                 array(4,'|:count| минуты'),
                         '|:count| минут'),
     'h'     => array(
-                        '|:count| час',
+                        '1 час',
                 array(4,'|:count| часа'),
                         '|:count| часов'),
     'd'     => array(
-                        '|:count| день',
+                        '1 день',
                 array(4,'|:count| дня'),
                         '|:count| дней'),
     'w'     => array(
-                        '|:count| неделю',
+                        '1 неделю',
                 array(4,'|:count| недели'),
                         '|:count| недель'),
     'm'     => array(
-                        '|:count| месяц',
+                        '1 месяц',
                 array(4,'|:count| месяца'),
                         '|:count| месяцев'),
     'y'     => array(
-                        '|:count| год',
+                        '1 год',
                 array(4,'|:count| года'),
                         '|:count| лет'),
     'meta'  => array(
