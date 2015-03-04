@@ -1,13 +1,13 @@
 <?php
 
 return array(
-        'sec'   => array('sekund', 'sekunder'),
-        'min'   => array('minut', 'minuter'),
-        'h'     => array('timme', 'timmar'),
-        'd'     => array('dag', 'dagar'),
-        'w'     => array('vecka', 'veckor'),
-        'm'     => array('månad', 'månader'),
-        'y'     => array('år'),
+        'sec'   => array('|:count| sekund', '|:count| sekunder'),
+        'min'   => array('|:count| minut',  '|:count| minuter'),
+        'h'     => array('|:count| timme',  '|:count| timmar'),
+        'd'     => array('|:count| dag',    '|:count| dagar'),
+        'w'     => array('|:count| vecka',  '|:count| veckor'),
+        'm'     => array('|:count| månad',  '|:count| månader'),
+        'y'     => array('|:count| år'),
         'meta'  => array(
                     'after_now'     => 'om |:phrase|',
                     'before_now'    => '|:phrase| sedan'

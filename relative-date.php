@@ -63,25 +63,24 @@ function fTime($time, $language, $gran) {
          $secondsLeft -= ($dateEl[$i] * $d[$i][0]);
          if($dateEl[$i]!=0)
          {
-            $phrase.= abs($dateEl[$i]) . " ";
-
             if($dateEl[$i]>1) :
                 if (count($d[$i])>3) :
                     foreach (array_slice($d[$i],2) as $term) :
                         if (is_array($term)) {
-                            if ($term[0]<=$dateEl[$i]) $phrase .= $term[1]." ";
+                            if ($term[0]<=$dateEl[$i]) $string = $term[1]." ";
                         } else {
-                            $phrase .= $term." ";
+                            $string = $term." ";
                         }
                     endforeach;
                 else :
-                    $phrase.= array_pop($d[$i])." ";
+                    $string = array_pop($d[$i])." ";
                 endif;
             else :
-                $phrase.= $d[$i][1]." ";
+                $string = $d[$i][1]." ";
             endif;
 
-            (($dateEl[$i]>1) ? $d[$i][2] : $d[$i][1]) ." ";
+            $phrase.= str_replace('|:count|', abs($dateEl[$i]), $string);
+
             $elements++;
             if ($elements >= $gran) break;
          }
