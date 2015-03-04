@@ -40,6 +40,7 @@ In addition, if you think a language is missing and you can help, please provide
 - English (en) *[default]*
 - Arabic (ar) *[experimental]*
 - Dutch (nl)
+- Finnish (fi)
 - French (fr)
 - German (de)
 - Italian (it)
@@ -79,7 +80,7 @@ Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions ident
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
 - Fixed Russian localization
-- Added support for Norwegian, Polish, Brazilian Portuguese
+- Added support for Norwegian, Polish, Brazilian Portuguese, Finnish
 - Added experimental support for Arabic
 
 **v0.7**
