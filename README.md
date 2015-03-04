@@ -44,7 +44,9 @@ In addition, if you think a language is missing and you can help, please provide
 - Italian (it)
 - Japanese (ja)
 - Norwegian (no)
+- Polish (pol)
 - Portuguese (pt)
+- Portuguese Brazilian (pt_BR)
 - Russian (ru)
 - Spanish (es)
 - Swedish (sv)
@@ -74,7 +76,7 @@ Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions ident
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
 - Fixed Russian localization
-- Added support for Norwegian, Polish
+- Added support for Norwegian, Polish, Brazilian Portuguese
 
 **v0.7**
 - Added basic [fuzzy expression support](#fuzzy) 
