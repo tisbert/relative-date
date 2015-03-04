@@ -1,6 +1,6 @@
 <?php
 
-field::$methods['relative'] = function($field, $gran = false) {
+field::$methods['relative'] = function($field, $threshold = false, $gran = false) {
 
     /* Checking if Kirby language config is enabled */
     if (count(site()->languages()) < 1)
@@ -18,8 +18,17 @@ field::$methods['relative'] = function($field, $gran = false) {
     /* Fallback to global length config if not provided */
     if ($gran == false) $gran = c::get('relativedate.length', 2);
 
+    /* Fallback to global threshold config if not provided */
+    if ($threshold == false) $gran = c::get('relativedate.threshold', false);
+
     $time = $field->page->date(false, $field->key);
-    $field->value = ftime($time, $language, $locale, $gran);
+
+    /* only convert to relative if time differnce no exceeds threshold */
+    if ($threshold == false ||
+        abs($time - time()) <= $threshold) :
+        $field->value = ftime($time, $language, $gran);
+    endif;
+
     return $field;
 };
 
