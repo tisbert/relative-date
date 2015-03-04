@@ -3,7 +3,8 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 ```
 2 months 3 days ago
 5 hours 47 minutes 18 seconds from now
-``
+``` 
+
 # Installation & Usage
 1. [Download](https://github.com/distantnative/kirby-relativedate/archive/develop.zip) the current release.
 2. Add the ```relative-date.php``` and ```lang``` folder to the ```site/plugins/relative-date/``` directory. You probably need to create the ```relative-date```folder.
@@ -34,24 +35,7 @@ c::set('relativedate.default', 'ja');
 ```
 
 # Fuzzy expressions <a id="fuzzy"></a>
-Sometimes you don't want the exact days or hours, but something more fuzzy. To activate include this in oyur ```site/config/config.php```:
-
-```php
-c::set('relativedate.fuzzy', array(
-    'FUZZYEXPRESSION',
-    'FUZZYEXPRESSION',
-    ));
-```
-
-Instead of ```FUZZYEXPRESSION``` you have to include the fuzzy expressions identifiers, which you want to be activated. At the moment the following fuzzy expression identifiers are available for some languages:
-
-**English:**
-- ```less than a minute ago```
-- ```yesterday```
-- ```tomorrow```
-
-**German:**
-- ```gestern```
+REWORK THIS FEATURE FIRST
 
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
