@@ -80,6 +80,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 
 - English (en) *[default]*
 - Arabic (ar) *[experimental]*
+- Bulgarian (bg)
 - Czech (cs)
 - Dutch (nl)
 - Finnish (fi)
@@ -104,7 +105,7 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 **v0.9**
 - Added [threshold option](#threshold)
 - Rewritten [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
-- Added Czech
+- Added Czech, Bulgarian,
 
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
