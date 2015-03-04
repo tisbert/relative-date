@@ -48,3 +48,8 @@ In addition, if you think a language is missing and you can help, please provide
 - Spanish (es)
 - Swedish (sv)
 - Thai (th)
+
+# Version history
+
+**v0.7**
+- Added basic fuzzy expressions ('yesterday', 'this week', 'less then a minute') for English

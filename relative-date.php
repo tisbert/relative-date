@@ -87,12 +87,15 @@ function fTime($time, $language, $gran) {
          }
     }
 
+    /* Adding prefix or suffix */
+    $return = str_replace('|:phrase|', $phrase, $language['meta'][$mode]);
+
     /* Making relative phrase fuzzy */
     if (c::get('relativedate.fuzzy', false) && array_key_exists('fuzzy', $language)) :
         foreach ($language['fuzzy'] as $fuzzyExp => $fuzzyTerm) :
-            preg_replace('/'.$fuzzyExp.'/', $fuzzyTerm, $phrase);
+            preg_replace('/'.$fuzzyExp.'/', $fuzzyTerm, $return);
         endforeach;
     endif;
 
-    return str_replace('|:phrase|', $phrase, $language['meta'][$mode]);
+    return $return;
 }

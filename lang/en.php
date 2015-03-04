@@ -13,8 +13,9 @@ return array(
                 'before_now'    => '|:phrase| ago'
                 ),
     'fuzzy' => array(
-                '^[1-5]?[1-9] second(s)?(.*)'  => 'less than a minute ago',
-                '^[1-2]?[1-9] hour(s)?(.*)'    => 'yesterday',
+                '^[1-5]?[1-9] second(s)?'      => 'less than a minute',
+                '^[1-2]?[1-9] hour(s)?(.*)(ago)' => 'yesterday',
+                '^[1-2]?[1-9] hour(s)?(.*)(from now)' => 'tomorrow',
                 '^[1-7] day(s)?(.*)'           => 'this week'
                 )
     );
