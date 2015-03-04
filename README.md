@@ -82,6 +82,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Arabic (ar) *[experimental]*
 - Bulgarian (bg)
 - Chinese (zh)
+- Chinese Taiwan (zh_TW)
 - Czech (cs)
 - Dutch (nl)
 - Finnish (fi)
@@ -106,7 +107,7 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 **v0.9**
 - Added [threshold option](#threshold)
 - Rewritten [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
-- Added Czech, Bulgarian, Chinese
+- Added Czech, Bulgarian, Chinese, Chinese Taiwan
 
 **v0.8**
 - Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
