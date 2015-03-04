@@ -84,6 +84,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Chinese (zh)
 - Chinese Taiwan (zh_TW)
 - Czech (cs)
+- Danish (da)
 - Dutch (nl)
 - Finnish (fi)
 - French (fr)
@@ -107,7 +108,7 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 **v0.9**
 - Added [threshold option](#threshold)
 - Complete rewrite [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
-- Added Czech, Bulgarian, Chinese, Chinese Taiwan support
+- Added Czech, Bulgarian, Chinese, Chinese Taiwan, Danish support
 - Improved minor things on Thai translation
 
 **v0.8**
