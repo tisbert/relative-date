@@ -43,5 +43,7 @@ return array(
     'meta'  => array(
                 'after_now'     => 'za |:phrase|',
                 'before_now'    => 'před |:phrase|'
-                )
+                ),
+
+    'supports' => 0.9
     );

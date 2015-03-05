@@ -42,5 +42,7 @@ return array(
     'meta'  => array(
                 'after_now'     => '|:phrase| od sada',
                 'before_now'    => 'pre |:phrase|'
-                )
+                ),
+
+    'supports' => 0.9
     );

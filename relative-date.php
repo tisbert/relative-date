@@ -42,7 +42,8 @@ function relativeTime($time, $language, $gran) {
         $language['supports'] >= 1.0) :
 
         /* today (ab 5 h difference but same exact calendar day) */
-        if ($diff->y == 0 &&
+        if (array_key_exists('today', $language['fuzzy']) &&
+            $diff->y == 0 &&
             $diff->m == 0 &&
             $diff->d == 0 &&
             $diff->h >= 5 &&
@@ -54,8 +55,8 @@ function relativeTime($time, $language, $gran) {
         $date_next->modify('+1 day');
         $date_before = new DateTime($time);
         $date_before->modify('-1 day');
-
-        if ($diff->y == 0 &&
+        if (array_key_exists('1day', $language['fuzzy']) &&
+            $diff->y == 0 &&
             $diff->m == 0 &&
             $diff->d <= 2 &&
             ($date_next->format('j') == $now->format('j') ||
@@ -63,7 +64,9 @@ function relativeTime($time, $language, $gran) {
             return $language['fuzzy']['1day'][$diff->invert];
 
         /* (last/next) WEEKDAY (up till 6 days difference) */
-        if ($diff->y == 0 &&
+        if (array_key_exists('Mon', $language['fuzzy']) &&
+            array_key_exists('last',  $language['meta']) &&
+            $diff->y == 0 &&
             $diff->m == 0 &&
             $diff->d >= 1 &&
             $diff->d < 7)
@@ -76,7 +79,9 @@ function relativeTime($time, $language, $gran) {
         $date_next->modify('+1 week');
         $date_before = new DateTime($time);
         $date_before->modify('-1 week');
-        if ($diff->y == 0 &&
+        if (array_key_exists('week', $language['fuzzy']) &&
+            array_key_exists('last',  $language['meta']) &&
+            $diff->y == 0 &&
             $diff->m == 0 &&
             ($date_next->format('W') == $now->format('W') ||
             $date_before->format('W') == $now->format('W')))
@@ -89,7 +94,9 @@ function relativeTime($time, $language, $gran) {
         $date_next->modify('+1 month');
         $date_before = new DateTime($time);
         $date_before->modify('-1 month');
-        if ($diff->y == 0 &&
+        if (array_key_exists('month', $language['fuzzy']) &&
+            array_key_exists('last',  $language['meta']) &&
+            $diff->y == 0 &&
             ($date_next->format('n') == $now->format('n') ||
             $date_before->format('n') == $now->format('n')))
             return str_replace('|:reference|',

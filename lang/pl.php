@@ -42,5 +42,7 @@ return array(
     'meta'  => array(
                 'after_now'     => '|:phrase| od teraz',
                 'before_now'    => '|:phrase| temu'
-                )
+                ),
+
+    'supports' => 0.9
     );

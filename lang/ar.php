@@ -67,5 +67,7 @@ return array(
     'meta'  => array(
                 'after_now'     => 'من الآن |:phrase|',
                 'before_now'    => 'منذ |:phrase|'
-                )
+                ),
+
+    'supports' => 0.9
     );

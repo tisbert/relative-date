@@ -11,5 +11,7 @@ return array(
     'meta'  => array(
                 'after_now'     => 'dentro de |:phrase|',
                 'before_now'    => 'há |:phrase|'
-                )
+                ),
+
+    'supports' => 0.9
     );

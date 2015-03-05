@@ -42,5 +42,7 @@ return array(
     'meta'  => array(
                 'after_now'     => 'через |:phrase|',
                 'before_now'    => '|:phrase| назад'
-                )
+                ),
+
+    'supports' => 0.9
     );

@@ -11,5 +11,7 @@ return array(
         'meta'  => array(
                     'after_now'     => 'dans |:phrase|',
                     'before_now'    => 'il y a |:phrase|'
-                    )
+                    ),
+
+        'supports' => 0.9
         );
