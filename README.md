@@ -44,29 +44,22 @@ On a per case basis:
 $page->published()->relative($threshold, 4);
 ```
 
+### Fuzzy <a id="fuzzy"></a>
+Relative Date supports fuzzy expressions, which means that instead of the rather exact date difference one of the following expressions will be displayed: today, tomorrow/yesterday, next/last {weekday}, next/last week, next/last month.
+If you want to turn of fuzzy expressions, just add the following to your ```sites/config/config.php```:
+
+```php
+c::set('relativedate.fuzzy', false);
+```
+
+Fuzzy expressions might not be supported by all of the included languages.
+
 ### Default Language
 You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:
 
 ```php
 c::set('relativedate.default', 'ja');
 ```
-
-# Fuzzy expressions <a id="fuzzy"></a>
-There is a way to get more fuzzy expressions, e.g. ```yesterday```instead of ```17 hours 40 minutes ago```. For that you need to set up the fuzzy expressions, which you want to use, in your ```site/config/config.php```, e.g.:
-
-```php
-c::set('relativedate.fuzzy', array(
-    /* English (en) */
-    'en' => array(
-        'tomorrow' => '/^[1-2]?[1-9] hour(s)?(.*)/',
-        'yesterday' => '/^(1 day(.*)|[1-2]?[1-9] hour(s)?(.*))/',
-        ),
-    ));
-``` 
- 
- The config item consists of an array in which each language gets its own array of fuzzy expressions. Each fuzzy expression consists of a key-value pair. They key represents the fuzzy term that you wanna have in your displayed result at the end, the value containts a regular expression of what is to replace.
-
- You can find a collection of fuzzy expression rules for different languages in the ```fuzzy-examples.php```file.
 
 # Help & Improve
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
