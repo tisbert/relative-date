@@ -16,7 +16,6 @@ field::$methods['relative'] = function($field, $threshold = false, $gran = false
     $language = require 'lang/'.$locale.'.php';
 
     /* Fallback to global length config if not provided */
-    if ($gran == false) $gran = c::get('relativedate.length', 2);
     if ($gran == false) $gran = c::get('relativedate.length', 1);
 
     /* Fallback to global threshold config if not provided */
