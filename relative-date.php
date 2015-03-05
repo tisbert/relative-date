@@ -17,6 +17,7 @@ field::$methods['relative'] = function($field, $threshold = false, $gran = false
 
     /* Fallback to global length config if not provided */
     if ($gran == false) $gran = c::get('relativedate.length', 2);
+    if ($gran == false) $gran = c::get('relativedate.length', 1);
 
     /* Fallback to global threshold config if not provided */
     if ($threshold == false) $gran = c::get('relativedate.threshold', false);
