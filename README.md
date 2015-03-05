@@ -98,6 +98,9 @@ In addition, if you think a language is missing, [let me know](https://github.co
 Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
 
 # Version history
+**v1.0**
+- Reword human readable & fuzzy expression logic
+
 **v0.9**
 - Added [threshold option](#threshold)
 - Complete rewrite [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
