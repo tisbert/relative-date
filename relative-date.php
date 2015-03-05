@@ -39,7 +39,7 @@ function relativeTime($time, $language, $gran) {
 
     if (c::get('relativedate.fuzzy', true) &&
         array_key_exists('supports', $language) &&
-        $language['supports'] == 2) :
+        $language['supports'] >= 1.0) :
 
         /* today (ab 5 h difference but same exact calendar day) */
         if ($diff->y == 0 &&

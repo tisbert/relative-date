@@ -18,6 +18,9 @@ return array(
                 ),
 
     'fuzzy' => array(
+                'today' => 'today',
+                '1day'  => array('tomorrow','yesterday'),
+
                 'Mon'   => 'Monday',
                 'Tue'   => 'Tuesday',
                 'Wed'   => 'Wednesday',
@@ -26,12 +29,9 @@ return array(
                 'Sat'   => 'Saturday',
                 'Sun'   => 'Sunday',
 
-                'today' => 'today',
-                '1day'  => array('tomorrow','yesterday'),
-
                 'week'  => 'week',
                 'month' => 'month',
                 ),
 
-    'supports' => 2
+    'supports' => 1.0
 );
