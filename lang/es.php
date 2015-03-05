@@ -11,7 +11,25 @@ return array(
         'meta'  => array(
                     'after_now'     => 'dentro de |:phrase|',
                     'before_now'    => 'hace |:phrase|'
+                    'next'          => '|:reference| próximo/a',
+                    'last'          => '|:reference| pasado/a',
                     ),
 
-        'supports' => 0.9
+        'fuzzy' => array(
+                    'today' => 'hoy',
+                    '1day'  => array('mañana','ayer'),
+
+                    'Mon'   => 'lunes',
+                    'Tue'   => 'martes',
+                    'Wed'   => 'miércoles',
+                    'Thu'   => 'jueves',
+                    'Fri'   => 'viernes',
+                    'Sat'   => 'sábado',
+                    'Sun'   => 'domingo',
+
+                    'week'  => 'la semana',
+                    'month' => 'el mes',
+                    ),
+
+        'supports' => 1.0
         );
