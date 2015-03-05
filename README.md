@@ -52,7 +52,7 @@ If you want to turn of fuzzy expressions, just add the following to your ```site
 c::set('relativedate.fuzzy', false);
 ```
 
-Fuzzy expressions might not be supported by all of the included languages.
+Fuzzy expressions are only supported by a few of the included languages yet.
 
 ### Default Language
 You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:

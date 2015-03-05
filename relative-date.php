@@ -37,6 +37,9 @@ function relativeTime($time, $language, $gran) {
 
     $meta_keys = array_keys($language['meta']);
 
+    /*
+     *  Fuzzy Expressions
+     */
     if (c::get('relativedate.fuzzy', true) &&
         array_key_exists('supports', $language) &&
         $language['supports'] >= 1.0) :
@@ -104,6 +107,10 @@ function relativeTime($time, $language, $gran) {
                                 $language['meta'][$meta_keys[$diff->invert + 2]]);
     endif;
 
+
+    /*
+     *  Normal Relative Date
+     */
     $phrase = "";
     $elements = 0;
     if ($diff->y > 0 && $elements<$gran) :
