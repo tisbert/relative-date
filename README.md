@@ -1,4 +1,4 @@
-# Kirby 2 - Relative Date Plugin v0.9
+# Kirby 2 - Relative Date Plugin v1.0
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
 ```
 2 months 3 days ago
@@ -52,7 +52,7 @@ If you want to turn of fuzzy expressions, just add the following to your ```site
 c::set('relativedate.fuzzy', false);
 ```
 
-Fuzzy expressions are only supported by a few of the included languages yet.
+Fuzzy expressions are only supported by a few of the included languages yet (English, German, French).
 
 ### Default Language
 You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:
@@ -88,6 +88,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Polish (pol)
 - Portuguese (pt)
 - Portuguese Brazilian (pt_BR)
+- Romanian (ro) *Thanks to [structor](https://github.com/structor)*
 - Russian (ru)
 - Serbian (sr)
 - Spanish (es)
