@@ -11,5 +11,7 @@ return array(
         'meta'  => array(
                     'after_now'     => '|:phrase| tästä hetkestä',
                     'before_now'    => '|:phrase| sitten'
-                    )
+                    ),
+
+        'supports' => 0.9
         );

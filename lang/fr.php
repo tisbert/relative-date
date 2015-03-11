@@ -10,6 +10,26 @@ return array(
         'y'     => array('1 an',      '|:count| ans'),
         'meta'  => array(
                     'after_now'     => 'dans |:phrase|',
-                    'before_now'    => 'il y a |:phrase|'
-                    )
+                    'before_now'    => 'il y a |:phrase|',
+                    'next'          => '|:reference| prochain/e',
+                    'last'          => '|:reference| dernièr/e',
+                    ),
+
+        'fuzzy' => array(
+                    'today' => 'aujourd\'hui',
+                    '1day'  => array('demain','hier'),
+
+                    'Mon'   => 'lundi',
+                    'Tue'   => 'mardi',
+                    'Wed'   => 'mercredi',
+                    'Thu'   => 'jeudi',
+                    'Fri'   => 'vendredi',
+                    'Sat'   => 'samedi',
+                    'Sun'   => 'dimanche',
+
+                    'week'  => 'la semaine',
+                    'month' => 'le mois',
+                    ),
+
+        'supports' => 1.0
         );

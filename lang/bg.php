@@ -11,5 +11,7 @@ return array(
     'meta'  => array(
                 'after_now'     => '|:phrase| от сега',
                 'before_now'    => 'преди |:phrase|'
-                )
+                ),
+
+    'supports' => 0.9
     );

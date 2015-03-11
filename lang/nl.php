@@ -11,5 +11,7 @@ return array(
         'meta'  => array(
                     'after_now'     => '|:phrase| vanaf nu',
                     'before_now'    => '|:phrase| geleden'
-                    )
+                    ),
+
+        'supports' => 0.9
         );

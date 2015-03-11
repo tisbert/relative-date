@@ -11,5 +11,7 @@ return array(
         'meta'  => array(
                     'after_now'     => '|:phrase| ที่แล้ว',
                     'before_now'    => '|:phrase| ที่แล้ว'
-                    )
+                    ),
+
+        'supports' => 0.9
         );
