@@ -88,7 +88,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Polish (pol)
 - Portuguese (pt)
 - Portuguese Brazilian (pt_BR)
-- Romanian (ro) *Thanks to [structor](https://github.com/structor)*
+- Romanian (ro) *[Thanks to [structor](https://github.com/structor)]*
 - Russian (ru)
 - Serbian (sr)
 - Spanish (es)
@@ -100,7 +100,9 @@ Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-d
 
 # Version history
 **v1.0**
-- Reword human readable & fuzzy expression logic
+- Rewritten human readable & fuzzy expression logic
+- Switched to using DateTime
+- Added Romanian support
 
 **v0.9**
 - Added [threshold option](#threshold)
