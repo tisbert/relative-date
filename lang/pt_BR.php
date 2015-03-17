@@ -10,7 +10,7 @@ return array(
     'y'     => array('1 ano',     '|:count| anos'),
     'meta'  => array(
                 'after_now'     => 'dentro de |:phrase|',
-                'before_now'    => 'há |:phrase|'
+                'before_now'    => 'a |:phrase|'
                 ),
 
     'supports' => 0.9
