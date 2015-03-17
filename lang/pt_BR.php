@@ -11,7 +11,28 @@ return array(
     'meta'  => array(
                 'after_now'     => 'dentro de |:phrase|',
                 'before_now'    => 'a |:phrase|'
+                'next'          => 'próximo/a |:reference|',
+                'last'          => 'último/a |:reference|',
                 ),
 
-    'supports' => 0.9
+    'fuzzy' => array(
+                'today' => 'hoje',
+                '1day'  => array('amanhã','ontem'),
+
+                'Mon'   => 'Segunda-feira',
+                'Tue'   => 'Terça-feira',
+                'Wed'   => 'Quarta-feira',
+                'Thu'   => 'Quinta-feira',
+                'Fri'   => 'Sexta-feira',
+                'Sat'   => 'Sábado',
+                'Sun'   => 'Domingo',
+
+                'week'  => 'semana',
+                'month' => 'mês',
+                ),
+
+    'supports' => 1.0,
+    'author'   => 'rhawbert (https://github.com/rhawbert)'
     );
+
+
