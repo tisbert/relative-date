@@ -13,5 +13,6 @@ return array(
                 'before_now'    => 'преди |:phrase|'
                 ),
 
-    'supports' => 0.9
+    'supports' => 0.9,
+    'author'   => 'distantnative (https://github.com/distantnative)'
     );

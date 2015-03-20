@@ -44,5 +44,6 @@ return array(
                 'before_now'    => '|:phrase| temu'
                 ),
 
-    'supports' => 0.9
+    'supports' => 0.9,
+    'author'   => 'distantnative (https://github.com/distantnative)'
     );

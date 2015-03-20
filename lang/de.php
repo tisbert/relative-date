@@ -32,5 +32,6 @@ return array(
                 'month' => 'r Monat',
                 ),
 
-    'supports' => 1.0
+    'supports' => 1.0,
+    'author'   => 'distantnative (https://github.com/distantnative)'
     );
