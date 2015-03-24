@@ -221,7 +221,8 @@ class relativeTimeDate {
     return array_key_exists('month', $this->language['fuzzy']) and
            array_key_exists('last',  $this->language['phrases']) and
            $this->difference->y == 0 and
-           $this->difference->m < 2 and
+           $this->difference->m <= 1 and
+           $this->difference->d <= 15 and
            (
              $next->format('n')   == $this->now->format('n') or
              $before->format('n') == $this->now->format('n')
