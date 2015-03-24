@@ -4,7 +4,7 @@
  *    Language file: Spanish (es)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  1.0
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'dentro de |:phrase|',
     'before_now'  => 'hace |:phrase|',
-    'next'        => '|:reference| próximo/a',
-    'last'        => '|:reference| pasado/a',
+    'next'        => array('|:reference| próximo', '|:reference| próxima'),
+    'last'        => array('|:reference| pasado',  '|:reference| pasada'),
   ),
 
   'sec' => array('1 segundo', '|:count| segundos'),
@@ -36,7 +36,7 @@ return array(
     'Sat'   => 'sábado',
     'Sun'   => 'domingo',
 
-    'week'  => 'la semana',
+    'week'  => array('la semana', 1),
     'month' => 'el mes',
   ),
 

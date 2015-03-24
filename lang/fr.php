@@ -4,7 +4,7 @@
  *    Language file: French (fr)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  1.0
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'dans |:phrase|',
     'before_now'  => 'il y a |:phrase|',
-    'next'        => '|:reference| prochain/e',
-    'last'        => '|:reference| dernièr/e',
+    'next'        => array('|:reference| prochain', '|:reference| prochaine'),
+    'last'        => array('|:reference| dernièr',  '|:reference| dernière'),
   ),
 
   'sec' => array('1 seconde', '|:count| econdes'),
@@ -36,7 +36,7 @@ return array(
     'Sat'   => 'samedi',
     'Sun'   => 'dimanche',
 
-    'week'  => 'la semaine',
+    'week'  => array('la semaine', 1),
     'month' => 'le mois',
   ),
 
