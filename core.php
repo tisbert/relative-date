@@ -182,7 +182,7 @@ class relativeTimeDate {
     return array_key_exists('1day', $this->language['fuzzy']) and
            $this->difference->y == 0 and
            $this->difference->m == 0 and
-           $this->difference->d <= 2 and
+           $this->difference->d <= 1 and
            (
              $next->format('j')   == $this->now->format('j') or
              $before->format('j') == $this->now->format('j')
