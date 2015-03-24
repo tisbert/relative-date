@@ -9,7 +9,7 @@ require 'core.php';
 
 field::$methods['relative'] = function($field, $args = null) {
     $defaults = array(
-      'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.default', 'en'),
+      'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en'),
       'length'    => c::get('relativedate.length', 2),
       'threshold' => c::get('relativedate.threshold', false),
       'fuzzy'     => c::get('relativedate.fuzzy', true)

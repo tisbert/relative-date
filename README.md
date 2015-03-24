@@ -59,6 +59,7 @@ You can also define the default fallback language (if not, it's English) in your
 
 ```php
 c::set('relativedate.default', 'ja');
+c::set('relativedate.lang', 'ja');
 ```
 
 # Help & Improve
