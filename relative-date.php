@@ -38,3 +38,35 @@ field::$methods['relative'] = function($field, $args = null) {
     return $field;
 };
 
+
+/**
+ *  Kirbytext tag '(relativedate: $date $threshold, $gran)'
+ */
+
+kirbytext::$tags['relativedate'] = array(
+  'attr' => array(
+      'lang',
+      'length',
+      'threshold',
+      'fuzzy'
+    ),
+  'html' => function($tag) {
+    $args = array(
+      'lang'      => $tag->attr('lang', (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en')),
+      'length'    => $tag->attr('length', c::get('relativedate.length', 2)),
+      'threshold' => $tag->attr('threshold', c::get('relativedate.threshold', false)),
+      'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true))
+    );
+
+    if ($args['threshold'] === false or
+        abs(strtotime($field->value) - time()) <= $args['threshold']) {
+      try {
+        $relative = new relativeTimeDate($tag->attr('relativedate'), $args);
+        return $relative->get($args['length']);
+      } catch (Exception $e) {
+        return $tag->attr('relativedate');
+      }
+    }
+
+  }
+);
