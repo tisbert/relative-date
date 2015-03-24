@@ -160,7 +160,11 @@ class relativeTimeDate {
         return str_replace('|:reference|', $reference, $phrase[0]);
       }
     } else {
-      return str_replace('|:reference|', $reference, $phrase);
+      if (is_array($reference)) {
+        return str_replace('|:reference|', $reference[$this->difference->invert], $phrase);
+      } else {
+        return str_replace('|:reference|', $reference, $phrase);
+      }
     }
 
   }
