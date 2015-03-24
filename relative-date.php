@@ -27,8 +27,12 @@ field::$methods['relative'] = function($field, $args = null) {
     // only convert to relative if time difference no exceeds threshold
     if ($args['threshold'] === false or
         abs(strtotime($field->value) - time()) <= $args['threshold']) {
-        $relative     = new relativeTimeDate($field->value, $args);
+      try {
+        $relative = new relativeTimeDate($field->value, $args);
         $field->value = $relative->get($args['length']);
+      } catch (Exception $e) {
+        $field->value = $field->value;
+      }
     }
 
     return $field;

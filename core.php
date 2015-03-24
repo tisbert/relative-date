@@ -18,7 +18,6 @@ class relativeTimeDate {
   protected $phrasesKeys  = array();
 
   public function __construct($date, $args) {
-    // fallback needed: if $date is not a valid string for DateTime
     $this->raw          = $date;
     $this->date         = new DateTime($this->raw);
     $this->now          = new DateTime();
@@ -232,5 +231,6 @@ class relativeTimeDate {
 
     return require 'lang/'.$locale.'.php';
   }
+
 
 }
