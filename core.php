@@ -129,23 +129,27 @@ class relativeTimeDate {
       return $this->language['fuzzy']['today'];
 
     //  tomorrow/yesterday
-    if ($this->isFuzzy1Day())
+    elseif ($this->isFuzzy1Day())
       return $this->language['fuzzy']['1day'][$this->difference->invert];
 
     // (last/next) WEEKDAY (up till 6 days difference)
-    if ($this->isFuzzyWeekday())
+    elseif ($this->isFuzzyWeekday())
       return $this->getPhrase($this->language['fuzzy'][$this->date->format('D')],
                               $this->language['phrases'][$this->phrasesKeys[$this->difference->invert + 2]]);
 
     // (last/next) week (nur +/-1 calendar week)
-    if ($this->isFuzzyWeek())
+    elseif ($this->isFuzzyWeek())
       return $this->getPhrase($this->language['fuzzy']['week'],
                               $this->language['phrases'][$this->phrasesKeys[$this->difference->invert + 2]]);
 
     // (last/next) month (+/-1 calendar month)
-    if ($this->isFuzzyMonth())
+    elseif ($this->isFuzzyMonth())
       return $this->getPhrase($this->language['fuzzy']['month'],
                               $this->language['phrases'][$this->phrasesKeys[$this->difference->invert + 2]]);
+
+    // fallback
+    else
+      return $this->getStatement();
   }
 
   protected function getPhrase($reference, $phrase) {
@@ -218,6 +222,7 @@ class relativeTimeDate {
     return array_key_exists('month', $this->language['fuzzy']) and
            array_key_exists('last',  $this->language['phrases']) and
            $this->difference->y == 0 and
+           $this->difference->m < 2 and
            (
              $next->format('n')   == $this->now->format('n') or
              $before->format('n') == $this->now->format('n')
