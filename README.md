@@ -1,13 +1,21 @@
-# Kirby 2 - Relative Date Plugin v1.0
+# Kirby 2 - Relative Date Plugin v1.1
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
-```
-2 months 3 days ago
-5 hours 47 minutes 18 seconds from now
-``` 
 
-# Installation & Usage
+> 2 months 3 days ago  
+> 5 hours 47 minutes 18 seconds from now  
+ 
+#### Overview
+1. [Installation & Usage](#install)  
+2. [Options](#options)  
+3. [Heping & Improving](#helping)  
+4. [Languages](#languages)  
+5. [Known Issues)](issues)  
+6. [Version History](#history)  
+
+
+# Installation & Usage <a id="install"></a>
 1. [Download](https://github.com/distantnative/kirby-relativedate/archive/develop.zip) the current release.
-2. Add the ```relative-date.php``` and ```lang``` folder to the ```site/plugins/relative-date/``` directory. You probably need to create the ```relative-date```folder.
+2. Add the `relative-date.php` and `lang` folder to the `site/plugins/relative-date/` directory. You probably need to create the `relative-date` folder.
 3. Then use it on any date field, e.g.: 
 ```php
 $page->published()->relative()
@@ -15,38 +23,56 @@ $page->published()->relative()
 
 To **update** to a higher version just replace the same files by their newer version.
 
-# Options
 
+# Options <a id="options"></a>
 
-### Threshold <a id="threshold"></a>
-Sometimes you only want relative dates for dates that are not too far in the past/future, but not for dates really far away. In that case you can set a threshold (in seconds). Only dates on the range of that threshold from the current time will be displayed as relative dates.
+### Parameters
 
-Globally in your ```sites/config/config.php```:
+You can set some options on an per-use basis by passing them through as parameters. If you wan to get a specific language, just pass the locale as string:
+
+```php
+$page->published()->relative('es');
+```
+
+If you want to specify the number of elements, just pass the (length)[#length] as integer:
+
+```php
+$page->published()->relative(1);
+```
+
+If you want to specify multiple options, pass them as an array:
+
+```php
+$args = array(
+  'lang'      => 'es',
+  'lenght'    => 1,
+  'threshold' => 999999,
+  'fuzzy'     => false
+);
+$page->published()->relative($args);
+```
+
+### Global options
+
+In addition to passing some options as parameters, you also can set some global options in your `sites/config/config.php`:
+
+**Threshold <a id="threshold"></a>**  
+Sometimes you only want relative dates for dates that are not too far in the past/future, but not for dates really far away. In that case you can set a threshold (in seconds). Only dates on the range of that threshold from the current time will be displayed as relative dates:
+
 ```php
 c::set('relativedate.threshold', 604800);
 ```
 
-On a per case basis:
-```php
-$page->published()->relative(604800);
-```
 
-### Length
+**Length <a id="length"></a>**  
 You can define how many date/time elements the phrase should entail. The default is 2 elements (e.g. '1 year 4 months' or '2 weeks 3 days' or '2 hours 34 minutes'). You can set your own phrase length in two ways:
 
-Globally in your ```sites/config/config.php```:
 ```php
 c::set('relativedate.length', 4);
 ```
 
-On a per case basis:
-```php
-$page->published()->relative($threshold, 4);
-```
-
-### Fuzzy <a id="fuzzy"></a>
-Relative Date supports fuzzy expressions, which means that instead of the rather exact date difference one of the following expressions will be displayed: today, tomorrow/yesterday, next/last {weekday}, next/last week, next/last month.
-If you want to turn of fuzzy expressions, just add the following to your ```sites/config/config.php```:
+**Fuzzy <a id="fuzzy"></a>**  
+Relative Date supports fuzzy expressions, which means that instead of the rather exact date difference one of the following expressions will be displayed: today, tomorrow/yesterday, next/last {weekday}, next/last week, next/last month:
 
 ```php
 c::set('relativedate.fuzzy', false);
@@ -54,32 +80,29 @@ c::set('relativedate.fuzzy', false);
 
 Fuzzy expressions are only supported by a few of the included languages yet (English, German, French).
 
-### Default Language
-You can also define the default fallback language (if not, it's English) in your ```sites/config/config.php```:
+**Default Language**  
+You can also define the default fallback language (if not, it defaults to English):
 
 ```php
-c::set('relativedate.default', 'ja');
 c::set('relativedate.lang', 'ja');
 ```
 
-# Help & Improve
+# Helping & Improving <a id="helping"></a>
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
 
-In addition, if you think a language is missing, [let me know](https://github.com/distantnative/kirby-relativedate/issues/11). And if you can even help with the translation, please provide the following information:
-- Words (singular & plural) for second, minute, hour, day, week, month and year
-- Terms that express A) that date & time are in the future (e.g. "1 hour from now") and B) that date & time are in the past (e.g. "3 days ago")
-- Where to put these terms in relation to the date/time-phrase (before, after, in between?)
+In addition, if you think a language is missing, [let me know](https://github.com/distantnative/kirby-relativedate/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/kirby-relativedate/issues/20).
 
-# Languages supported
+# Languages supported <a id="languages"></a>
 
-- English (en) *[default]*
-- Arabic (ar) *[experimental]*
+- Arabic (ar)
 - Bulgarian (bg)
+- Catalan (ca)
 - Chinese (zh)
 - Chinese Taiwan (zh_TW)
 - Czech (cs)
 - Danish (da)
 - Dutch (nl)
+- English (en) *[default]*
 - Finnish (fi)
 - French (fr)
 - German (de)
@@ -88,8 +111,8 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Norwegian (no)
 - Polish (pol)
 - Portuguese (pt)
-- Portuguese Brazilian (pt_BR)
-- Romanian (ro) *[Thanks to [structor](https://github.com/structor)]*
+- Portuguese Brazilian (pt_BR) 
+- Romanian (ro)
 - Russian (ru)
 - Serbian (sr)
 - Spanish (es)
@@ -97,9 +120,18 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Thai (th)
 - Turkish (tr)
 
-Credits go to the [Laravel Date project](https://github.com/jenssegers/laravel-date/tree/master/src/lang) for their languages variables as well as [this localization guide](http://localization-guide.readthedocs.org/en/latest/l10n/pluralforms.html) for providing the plural set rules.
+# Known Issues <a id="issues"></a>
+- This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`.
 
-# Version history
+# Version History <a id="history"></a>
+**v1.1**
+- Moved plugin logic to relativeTimeDate class
+- Improved parameter handling
+- Added option to specify a different language as the current
+- Systemized and cleaned up language files
+- Added support for Catalan
+- Added language support for gendered fuzzy expressions (already enable in French, Spanish, Brazilian Portuguese and Catalan)
+
 **v1.0**
 - Rewritten human readable & fuzzy expression logic
 - Switched to using DateTime
