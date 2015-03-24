@@ -4,7 +4,7 @@
  *    Language file: Swedish (sv)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'om |:phrase|',
     'before_now'  => '|:phrase| sedan',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'nästa |:reference|',
+    'last'        => 'förra |:reference|',
   ),
 
   'sec' => array('1 sekund', '|:count| sekunder'),
@@ -24,22 +24,20 @@ return array(
   'm'   => array('1 månad',  '|:count| månader'),
   'y'   => array(            '|:count| år'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'idag',
+    '1day'  => array('imorgon', 'igår'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => array('måndag', 'måndagen'),
+    'Tue'   => array('tisdag', 'tisdagen'),
+    'Wed'   => array('onsdag', 'onsdagen'),
+    'Thu'   => array('torsdag', 'torsdagen'),
+    'Fri'   => array('fredag', 'fredagen'),
+    'Sat'   => array('lördag', 'lördagen'),
+    'Sun'   => array('söndag', 'söndagen'),
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => array('vecka', 'veckan'),
+    'month' => array('månad', 'månaden'),
   ),
-  */
 
 );
