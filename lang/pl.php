@@ -1,49 +1,79 @@
 <?php
-$rule1 = '|:n|==1';
-$rule2 = '|:n|%10>=2 && |:n|%10<=4 && (|:n|%100<10 || |:n|%100>=20)';
-$rule3 = 'true';
+
+/**
+ *    Language file: Polish (pl)
+ *    ----
+ *    Author:   distantnative (https://github.com/distantnative)
+ *    Version:  0.9
+ */
+
+$rules = array(
+  '|:n| == 1',
+  '|:n|%10 >= 2 and |:n|%10 <= 4 and (|:n|%100 < 10 or |:n|%100 >= 20)',
+  'true'
+);
 
 return array(
-    'sec'   => array(
-                array($rule1, '|:count| sekunda'),
-                array($rule2, '|:count| sekundy'),
-                array($rule3, '|:count| sekund'),
-            ),
-    'min'   => array(
-                array($rule1, '|:count| minuta'),
-                array($rule2, '|:count| minuty'),
-                array($rule3, '|:count| minut'),
-            ),
-    'h'     => array(
-                array($rule1, '|:count| godzina'),
-                array($rule2, '|:count| godziny'),
-                array($rule3, '|:count| godzin'),
-            ),
-    'd'     => array(
-                array($rule1, '|:count| dzień'),
-                array($rule2, '|:count| dni'),
-                array($rule3, '|:count| dni'),
-            ),
-    'w'     => array(
-                array($rule1, '|:count| tydzień'),
-                array($rule2, '|:count| tygodnie'),
-                array($rule3, '|:count| tygodni'),
-            ),
-    'm'     => array(
-                array($rule1, '|:count| miesiąc'),
-                array($rule2, '|:count| miesiące'),
-                array($rule3, '|:count| miesięcy'),
-            ),
-    'y'     => array(
-                array($rule1, '|:count| rok'),
-                array($rule2, '|:count| lata'),
-                array($rule3, '|:count| lat'),
-            ),
-    'meta'  => array(
-                'after_now'     => '|:phrase| od teraz',
-                'before_now'    => '|:phrase| temu'
-                ),
 
-    'supports' => 0.9,
-    'author'   => 'distantnative (https://github.com/distantnative)'
-    );
+  'phrases'  => array(
+    'after_now'   => '|:phrase| od teraz',
+    'before_now'  => '|:phrase| temu',
+    // 'next'        => 'next |:reference|',
+    // 'last'        => 'last |:reference|',
+  ),
+
+  'sec' => array(
+    array($rules[0], '|:count| sekunda'),
+    array($rules[1], '|:count| sekundy'),
+    array($rules[2], '|:count| sekund'),
+  ),
+  'min' => array(
+    array($rules[0], '|:count| minuta'),
+    array($rules[1], '|:count| minuty'),
+    array($rules[2], '|:count| minut'),
+  ),
+  'h'   => array(
+    array($rules[0], '|:count| godzina'),
+    array($rules[1], '|:count| godziny'),
+    array($rules[2], '|:count| godzin'),
+  ),
+  'd'   => array(
+    array($rules[0], '|:count| dzień'),
+    array($rules[1], '|:count| dni'),
+    array($rules[2], '|:count| dni'),
+  ),
+  'w'   => array(
+    array($rules[0], '|:count| tydzień'),
+    array($rules[1], '|:count| tygodnie'),
+    array($rules[2], '|:count| tygodni'),
+  ),
+  'm'   => array(
+    array($rules[0], '|:count| miesiąc'),
+    array($rules[1], '|:count| miesiące'),
+    array($rules[2], '|:count| miesięcy'),
+  ),
+  'y'   => array(
+    array($rules[0], '|:count| rok'),
+    array($rules[1], '|:count| lata'),
+    array($rules[2], '|:count| lat'),
+  ),
+
+  /*
+  'fuzzy' => array(
+    'today' => 'today',
+    '1day'  => array('tomorrow','yesterday'),
+
+    'Mon'   => 'Monday',
+    'Tue'   => 'Tuesday',
+    'Wed'   => 'Wednesday',
+    'Thu'   => 'Thursday',
+    'Fri'   => 'Friday',
+    'Sat'   => 'Saturday',
+    'Sun'   => 'Sunday',
+
+    'week'  => 'week',
+    'month' => 'month',
+  ),
+  */
+
+);
