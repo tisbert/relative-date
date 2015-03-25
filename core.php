@@ -41,7 +41,7 @@ class relativeTimeDate {
 
     // fuzzy expressions
     if ($this->isFuzzy)
-      return $this->getFuzzyExpressions();
+      return $this->getFuzzyExpression();
 
     // normal expressions
     else
@@ -121,7 +121,7 @@ class relativeTimeDate {
    * [fuzzyExpressions description]
    * @return [type] [description]
    */
-  protected function getFuzzyExpressions() {
+  protected function getFuzzyExpression() {
 
     // today (at least 5 h difference but same exact calendar day)
     if ($this->isFuzzyToday())

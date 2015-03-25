@@ -58,6 +58,8 @@ kirbytext::$tags['relativedate'] = array(
       'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true))
     );
 
+    $args['fuzzy'] = ($args['fuzzy'] == 'false') ? false : $args['fuzzy'];
+
     if ($args['threshold'] === false or
         abs(strtotime($field->value) - time()) <= $args['threshold']) {
       try {
