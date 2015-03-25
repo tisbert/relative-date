@@ -4,16 +4,17 @@
  *    Language file: Dutch (nl)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Author:   Roy Lodder (https://github.com/roylodder)
+ *    Version:  1.0
  */
 
 return array(
 
   'phrases'  => array(
-    'after_now'   => '|:phrase| vanaf nu',
+    'after_now'   => 'over |:phrase|',
     'before_now'  => '|:phrase| geleden',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'afgelopen |:reference|',
+    'last'        => 'volgende |:reference|',
   ),
 
   'sec' => array('1 seconde', '|:count| seconden'),
@@ -24,22 +25,20 @@ return array(
   'm'   => array('1 maand',   '|:count| maanden'),
   'y'   => array(             '|:count| jaar'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'vandaag',
+    '1day'  => array('morgen','gisteren'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'maandag',
+    'Tue'   => 'dinsdag',
+    'Wed'   => 'woensdag',
+    'Thu'   => 'donderdag',
+    'Fri'   => 'vrijdag',
+    'Sat'   => 'zaterdag',
+    'Sun'   => 'zondag',
 
     'week'  => 'week',
-    'month' => 'month',
+    'month' => 'maand',
   ),
-  */
 
 );
