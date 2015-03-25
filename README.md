@@ -6,7 +6,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 ``` 
 
 # Installation & Usage
-1. [Download](https://github.com/distantnative/kirby-relativedate/archive/develop.zip) the current release.
+1. [Download](https://github.com/distantnative/kirby-relativedate/archive/master.zip) the current release.
 2. Add the ```relative-date.php``` and ```lang``` folder to the ```site/plugins/relative-date/``` directory. You probably need to create the ```relative-date```folder.
 3. Then use it on any date field, e.g.: 
 ```php
