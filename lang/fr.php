@@ -13,7 +13,7 @@ return array(
     'after_now'   => 'dans |:phrase|',
     'before_now'  => 'il y a |:phrase|',
     'next'        => array('|:reference| prochain', '|:reference| prochaine'),
-    'last'        => array('|:reference| dernièr',  '|:reference| dernière'),
+    'last'        => array('|:reference| dernier',  '|:reference| dernière'),
   ),
 
   'sec' => array('1 seconde', '|:count| secondes'),
