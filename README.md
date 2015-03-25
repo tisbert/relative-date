@@ -145,7 +145,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Systemized and cleaned up language files
 - Added language support for time-sensitive and gendered fuzzy expressions (already enabled in French, Spanish, Brazilian Portuguese and Catalan)
 - Added support for Catalan
-- Added fuzzy expressions for Swedish, Norwegian, Brazilian Portuguese and Catalan
+- Added fuzzy expressions for Swedish, Norwegian, Danish, Brazilian Portuguese and Catalan
 
 **v1.0**
 - Rewritten human readable & [fuzzy expression](#fuzzy) logic

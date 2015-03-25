@@ -4,7 +4,7 @@
  *    Language file: Danish (da)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.0
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'om |:phrase|',
     'before_now'  => '|:phrase| siden',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'næste |:reference|',
+    'last'        => 'sidste |:reference|',
   ),
 
   'sec' => array('1 sekund', '|:count| sekunder'),
@@ -24,22 +24,20 @@ return array(
   'm'   => array('1 måned',  '|:count| måneder'),
   'y'   => array(            '|:count| år'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'i dag',
+    '1day'  => array('i morgen','i går'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'mandag',
+    'Tue'   => 'tirsdag',
+    'Wed'   => 'onsdag',
+    'Thu'   => 'torsdag',
+    'Fri'   => 'fredag',
+    'Sat'   => 'lørdag',
+    'Sun'   => 'søndag',
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => 'uge',
+    'month' => 'måned',
   ),
-  */
 
 );

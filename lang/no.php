@@ -4,7 +4,7 @@
  *    Language file: Norwegian (en)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.0
  */
 
 return array(
