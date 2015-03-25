@@ -16,7 +16,7 @@ return array(
     'last'        => array('|:reference| dernièr',  '|:reference| dernière'),
   ),
 
-  'sec' => array('1 seconde', '|:count| econdes'),
+  'sec' => array('1 seconde', '|:count| secondes'),
   'min' => array('1 minute',  '|:count| minutes'),
   'h'   => array('1 heure',   '|:count| heures'),
   'd'   => array('1 jour',    '|:count| jours'),
