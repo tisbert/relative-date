@@ -19,8 +19,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 
 To **update** to a higher version of this plugin, replace the files with the newer version.
 
-# Usage <a id="install"></a>
-
+# Usage <a id="use"></a>
 You can either use it as field method:
 ```php
 <?php echo $page->published()->relative() ?>
@@ -133,7 +132,10 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Turkish (tr)
 
 # Known Issues <a id="issues"></a>
-- This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`.
+- This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`. As another workaround the `date` field could be included in a `relativedate` Kirbytext tag:
+```
+<?php echo kirbytext('(relativedate: ' . $page->date('Y-m-d') . ')') ?>
+``` 
 
 # Version History <a id="history"></a>
 **v1.1**
