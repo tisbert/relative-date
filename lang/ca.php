@@ -4,7 +4,7 @@
  *    Language file: Catalan (ca)
  *    ----
  *    Author:   danielguillan (https://github.com/danielguillan)
- *    Version:  1.0
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'd’aquí a |:phrase|',
     'before_now'  => 'fa |:phrase|',
-    'next'        => '|:reference| pròxim/a',
-    'last'        => '|:reference| passat/da',
+    'next'        => array('|:reference| pròxim', '|:reference| pròxima'),
+    'last'        => array('|:reference| passat',  '|:reference| passada'),
   ),
 
   'sec' => array('1 segon',   '|:count| segons'),
@@ -36,7 +36,7 @@ return array(
     'Sat'   => 'dissabte',
     'Sun'   => 'diumenge',
 
-    'week'  => 'la setmana',
+    'week'  => array('la setmana', 1),
     'month' => 'el mes',
   ),
 
