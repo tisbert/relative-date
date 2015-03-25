@@ -4,7 +4,7 @@
  *    Language file: Portuguese (pt)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'em |:phrase|',
     'before_now'  => '|:phrase| atrás',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => array('próximo |:reference|', 'próxima |:reference|'),
+    'last'        => array('|:reference| passado', '|:reference| passada'),
   ),
 
   'sec' => array('1 segundo', '|:count| segundos'),
@@ -24,22 +24,20 @@ return array(
   'm'   => array('1 mês',     '|:count| meses'),
   'y'   => array('1 ano',     '|:count| anos'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'hoje',
+    '1day'  => array('amanhã','ontem'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => array('segunda-feira', 1),
+    'Tue'   => array('terça-feira', 1),
+    'Wed'   => array('quarta-feira', 1),
+    'Thu'   => array('quinta-feira', 1),
+    'Fri'   => array('sexta-feira', 1),
+    'Sat'   => 'sábado',
+    'Sun'   => 'domingo',
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => array('semana', 1),
+    'month' => 'mês',
   ),
-  */
 
 );
