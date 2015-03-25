@@ -5,24 +5,31 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 > 5 hours 47 minutes 18 seconds from now  
  
 #### Overview
-1. [Installation & Usage](#install)  
+1. [Installation](#install)  
+1. [Usage](#use)  
 2. [Options](#options)  
 3. [Heping & Improving](#helping)  
 4. [Languages](#languages)  
 5. [Known Issues)](issues)  
 6. [Version History](#history)  
 
+# Installation <a id="install"></a>
+1. [Download](https://github.com/distantnative/kirby-relativedate/archive/master.zip) the current release.
+2. Add the `relative-date.php`, `core.php` and `lang` folder to the `site/plugins/relative-date/` directory. You probably need to create the `relative-date` folder inside `site/plugins/` first.
 
-# Installation & Usage <a id="install"></a>
-1. [Download](https://github.com/distantnative/kirby-relativedate/archive/develop.zip) the current release.
-2. Add the `relative-date.php` and `lang` folder to the `site/plugins/relative-date/` directory. You probably need to create the `relative-date` folder.
-3. Then use it on any date field, e.g.: 
+To **update** to a higher version of this plugin, replace the files with the newer version.
+
+# Usage <a id="install"></a>
+
+You can either use it as field method:
 ```php
-$page->published()->relative()
+<?php echo $page->published()->relative() ?>
 ```
 
-To **update** to a higher version just replace the same files by their newer version.
-
+Or as [Kirbytext](http://getkirby.com/docs/content/text) tag:
+```
+Published: (relativedate: 2015-02-15)
+```
 
 # Options <a id="options"></a>
 
@@ -45,11 +52,16 @@ If you want to specify multiple options, pass them as an array:
 ```php
 $args = array(
   'lang'      => 'es',
-  'lenght'    => 1,
+  'length'    => 1,
   'threshold' => 999999,
   'fuzzy'     => false
 );
 $page->published()->relative($args);
+```
+
+If you use the Kirbytext tag, this works as well:
+```
+(relativedate: 2015-02-15 lang: es length: 1 threshold: 99999 fuzzy: false)
 ```
 
 ### Global options
@@ -78,7 +90,7 @@ Relative Date supports fuzzy expressions, which means that instead of the rather
 c::set('relativedate.fuzzy', false);
 ```
 
-Fuzzy expressions are only supported by a few of the included languages yet (English, German, French).
+Fuzzy expressions are only supported by a few of the included languages yet (English, German, French, Spanish, Swedish, Catalan, Brazilian Portuguese).
 
 **Default Language**  
 You can also define the default fallback language (if not, it defaults to English):
@@ -129,11 +141,12 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Improved parameter handling
 - Added option to specify a different language as the current
 - Systemized and cleaned up language files
+- Added language support for time-sensitive and gendered fuzzy expressions (already enabled in French, Spanish, Brazilian Portuguese and Catalan)
 - Added support for Catalan
-- Added language support for gendered fuzzy expressions (already enable in French, Spanish, Brazilian Portuguese and Catalan)
+- Added fuzzy expressions for Swedish, Brazilian Portuguese and Catalan
 
 **v1.0**
-- Rewritten human readable & fuzzy expression logic
+- Rewritten human readable & [fuzzy expression](#fuzzy) logic
 - Switched to using DateTime
 - Added Romanian support
 
