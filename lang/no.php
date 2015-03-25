@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'om |:phrase|',
     'before_now'  => '|:phrase| siden',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'neste |:reference|',
+    'last'        => 'siste |:reference|',
   ),
 
   'sec' => array('1 sekund', '|:count| sekunder'),
@@ -24,22 +24,20 @@ return array(
   'm'   => array('1 måned',  '|:count| måneder'),
   'y'   => array(            '|:count| år'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'i dag',
+    '1day'  => array('i morgon','i går'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'mandag',
+    'Tue'   => 'tirsdag',
+    'Wed'   => 'onsdag',
+    'Thu'   => 'torsdag',
+    'Fri'   => 'fredag',
+    'Sat'   => 'lørdag',
+    'Sun'   => 'søndag',
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => 'uke',
+    'month' => 'måned',
   ),
-  */
 
 );

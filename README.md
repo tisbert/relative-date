@@ -133,7 +133,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 
 # Known Issues <a id="issues"></a>
 - This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`. As another workaround the `date` field could be included in a `relativedate` Kirbytext tag:
-```
+```php
 <?php echo kirbytext('(relativedate: ' . $page->date('Y-m-d') . ')') ?>
 ``` 
 
@@ -145,7 +145,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Systemized and cleaned up language files
 - Added language support for time-sensitive and gendered fuzzy expressions (already enabled in French, Spanish, Brazilian Portuguese and Catalan)
 - Added support for Catalan
-- Added fuzzy expressions for Swedish, Brazilian Portuguese and Catalan
+- Added fuzzy expressions for Swedish, Norwegian, Brazilian Portuguese and Catalan
 
 **v1.0**
 - Rewritten human readable & [fuzzy expression](#fuzzy) logic
