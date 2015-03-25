@@ -4,7 +4,7 @@
  *    Language file: Brazilian Portuguese (pt_BR)
  *    ----
  *    Author:   rhawbert (https://github.com/rhawbert)
- *    Version:  1.0
+ *    Version:  1.1
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'dentro de |:phrase|',
     'before_now'  => 'a |:phrase|',
-    'next'        => 'próximo/a |:reference|',
-    'last'        => 'último/a |:reference|',
+    'next'        => array('próximo |:reference|', 'próxima |:reference|'),
+    'last'        => array('último |:reference|',  'última |:reference|'),
   ),
 
   'sec'   => array('1 segundo', '|:count| segundos'),
@@ -28,15 +28,15 @@ return array(
     'today' => 'hoje',
     '1day'  => array('amanhã','ontem'),
 
-    'Mon'   => 'Segunda-feira',
-    'Tue'   => 'Terça-feira',
-    'Wed'   => 'Quarta-feira',
-    'Thu'   => 'Quinta-feira',
-    'Fri'   => 'Sexta-feira',
+    'Mon'   => array('Segunda-feira', 1),
+    'Tue'   => array('Terça-feira', 1),
+    'Wed'   => array('Quarta-feira', 1),
+    'Thu'   => array('Quinta-feira', 1),
+    'Fri'   => array('Sexta-feira', 1),
     'Sat'   => 'Sábado',
     'Sun'   => 'Domingo',
 
-    'week'  => 'semana',
+    'week'  => array('semana', 1),
     'month' => 'mês',
   ),
 
