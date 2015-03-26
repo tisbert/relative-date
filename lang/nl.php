@@ -13,8 +13,8 @@ return array(
   'phrases'  => array(
     'after_now'   => 'over |:phrase|',
     'before_now'  => '|:phrase| geleden',
-    'next'        => 'afgelopen |:reference|',
-    'last'        => 'volgende |:reference|',
+    'next'        => 'volgende |:reference|',
+    'last'        => 'afgelopen |:reference|',
   ),
 
   'sec' => array('1 seconde', '|:count| seconden'),
