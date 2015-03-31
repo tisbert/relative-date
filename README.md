@@ -1,4 +1,5 @@
-# Kirby 2 - Relative Date Plugin
+Kirby 2 - Relative Date Plugin
+============
 ![Release](https://img.shields.io/github/release/distantnative/kirby-relativedate.svg)  [![Issues](https://img.shields.io/github/issues/distantnative/kirby-relativedate.svg)](https://github.com/distantnative/kirby-relativedate/issues)
 
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
