@@ -141,6 +141,10 @@ In addition, if you think a language is missing, [let me know](https://github.co
 ``` 
 
 # Version History <a id="history"></a>
+**v1.2**
+- Added fuzzy expressions for Turkish, Portuguese, Dutch and Finnish
+- Bugfixes
+
 **v1.1**
 - Moved plugin logic to relativeTimeDate class
 - Improved parameter handling
