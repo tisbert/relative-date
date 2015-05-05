@@ -4,15 +4,15 @@
  *    Language file: Finish (fi)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.1
  */
 
 return array(
   'phrases'  => array(
     'after_now'   => '|:phrase| tästä hetkestä',
     'before_now'  => '|:phrase| sitten',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'ensi |:reference|',
+    'last'        => 'viime |:reference|',
 
   ),
 
@@ -24,22 +24,20 @@ return array(
   'm'   => array('1 kuukausi', '|:count| kuukautta'),
   'y'   => array('1 vuosi',    '|:count| vuotta'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'tänään',
+    '1day'  => array('huomenna','eilen'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'maanantaina',
+    'Tue'   => 'tiistaina',
+    'Wed'   => 'keskiviikkona',
+    'Thu'   => 'torstaina',
+    'Fri'   => 'perjantaina',
+    'Sat'   => 'lauantaina',
+    'Sun'   => 'sunnuntaina',
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => 'viikolla',
+    'month' => 'kuussa',
   ),
-  */
 
 );

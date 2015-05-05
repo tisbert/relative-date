@@ -61,13 +61,15 @@ kirbytext::$tags['relativedate'] = array(
     $args['fuzzy'] = ($args['fuzzy'] == 'false') ? false : $args['fuzzy'];
 
     if ($args['threshold'] === false or
-        abs(strtotime($field->value) - time()) <= $args['threshold']) {
+        abs(strtotime($tag->attr('relativedate')) - time()) <= $args['threshold']) {
       try {
         $relative = new relativeTimeDate($tag->attr('relativedate'), $args);
         return $relative->get($args['length']);
       } catch (Exception $e) {
         return $tag->attr('relativedate');
       }
+    } else {
+      return $tag->attr('relativedate');
     }
 
   }

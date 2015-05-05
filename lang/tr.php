@@ -4,7 +4,7 @@
  *    Language file: Turkish (tr)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
+ *    Version:  1.0
  */
 
 return array(
@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => '|:phrase| sonra',
     'before_now'  => '|:phrase| önce',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => 'gelecek |:reference|',
+    'last'        => 'geçen |:reference|',
   ),
 
   'sec' => array('|:count| saniye'),
@@ -24,22 +24,20 @@ return array(
   'm'   => array('|:count| ay'),
   'y'   => array('|:count| yıl'),
 
-  /*
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'bugün',
+    '1day'  => array('yarın','dün'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'Pazartesi',
+    'Tue'   => 'Salı',
+    'Wed'   => 'Çarşamba',
+    'Thu'   => 'Perşembe',
+    'Fri'   => 'Cuma',
+    'Sat'   => 'Cumartesi',
+    'Sun'   => 'Pazar',
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => 'hafta',
+    'month' => 'ay',
   ),
-  */
 
 );

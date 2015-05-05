@@ -1,4 +1,7 @@
-# Kirby 2 - Relative Date Plugin v1.1
+Kirby 2 - Relative Date Plugin
+============
+![Release](https://img.shields.io/github/release/distantnative/kirby-relativedate.svg)  [![Issues](https://img.shields.io/github/issues/distantnative/kirby-relativedate.svg)](https://github.com/distantnative/kirby-relativedate/issues)
+
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
 
 > 2 months 3 days ago  
@@ -10,7 +13,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 2. [Options](#options)  
 3. [Heping & Improving](#helping)  
 4. [Languages](#languages)  
-5. [Known Issues)](issues)  
+5. [Known Issues)](#issues)  
 6. [Version History](#history)  
 
 # Installation <a id="install"></a>
@@ -138,6 +141,10 @@ In addition, if you think a language is missing, [let me know](https://github.co
 ``` 
 
 # Version History <a id="history"></a>
+**v1.2**
+- Added fuzzy expressions for Turkish, Portuguese, Dutch and Finnish
+- Bugfixes
+
 **v1.1**
 - Moved plugin logic to relativeTimeDate class
 - Improved parameter handling
