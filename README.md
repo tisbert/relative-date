@@ -13,7 +13,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 2. [Options](#options)  
 3. [Heping & Improving](#helping)  
 4. [Languages](#languages)  
-5. [Known Issues)](issues)  
+5. [Known Issues)](#issues)  
 6. [Version History](#history)  
 
 # Installation <a id="install"></a>
