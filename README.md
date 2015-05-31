@@ -1,6 +1,6 @@
-Kirby 2 - Relative Date Plugin
+Relative Date Plugin for Kirby 2 CMS
 ============
-![Release](https://img.shields.io/github/release/distantnative/kirby-relativedate.svg)  [![Issues](https://img.shields.io/github/issues/distantnative/kirby-relativedate.svg)](https://github.com/distantnative/kirby-relativedate/issues)
+![Release](https://img.shields.io/github/release/distantnative/relative-date.svg)  [![Issues](https://img.shields.io/github/issues/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/issues)
 
 Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
 
@@ -17,7 +17,7 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 6. [Version History](#history)  
 
 # Installation <a id="install"></a>
-1. [Download](https://github.com/distantnative/kirby-relativedate/archive/master.zip) the current release.
+1. [Download](https://github.com/distantnative/relative-date/archive/master.zip) the current release.
 2. Add the `relative-date.php`, `core.php` and `lang` folder to the `site/plugins/relative-date/` directory. You probably need to create the `relative-date` folder inside `site/plugins/` first.
 
 To **update** to a higher version of this plugin, replace the files with the newer version.
@@ -141,6 +141,9 @@ In addition, if you think a language is missing, [let me know](https://github.co
 ``` 
 
 # Version History <a id="history"></a>
+**1.3**
+- Renamed repository to `relative-date` and restructured files
+
 **v1.2**
 - Added fuzzy expressions for Turkish, Portuguese, Dutch and Finnish
 - Bugfixes
