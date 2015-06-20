@@ -109,7 +109,7 @@ c::set('relativedate.lang', 'ja');
 # Help & Improve <a id="helping"></a>
 Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/relativ-edate/issues).
 
-In addition, if you think a language is missing, [let me know](https://github.com/distantnative/relative-date/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/relative-date/issues/20).
+In addition, if you think a language is missing, [let me know](https://github.com/distantnative/relative-date/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/relative-date/issues/32).
 
 # Languages supported <a id="languages"></a>
 
