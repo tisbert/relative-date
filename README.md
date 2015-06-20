@@ -1,8 +1,9 @@
-Relative Date Plugin for Kirby 2 CMS
-============
-![Release](https://img.shields.io/github/release/distantnative/relative-date.svg)  [![Issues](https://img.shields.io/github/issues/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/issues)
+![Relative Date for Kirby CMS](http://distantnative.com/remote/github/kirby-relativedate-github.png)  
 
-Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative format: Converts your absolute date (and time) in something relative and more readable, e.g.: 
+[![Release](https://img.shields.io/github/release/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/releases)  [![Issues](https://img.shields.io/github/issues/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/issues) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/distantnative/footnotes/master/LICENSE)
+[![Moral License](https://img.shields.io/badge/buy-moral_license-8dae28.svg)](https://gumroad.com/l/kirby-relativedate)
+
+The Relative Date plugin for Kirby CMS displays date and time to a human-readable relative format. It converts your absolute date (and time) in something relative and more readable, e.g.: 
 
 > 2 months 3 days ago  
 > 5 hours 47 minutes 18 seconds from now  
@@ -11,14 +12,14 @@ Plugin for Kirby 2 CMS that coverts date and time to a human-readable relative f
 1. [Installation](#install)  
 1. [Usage](#use)  
 2. [Options](#options)  
-3. [Heping & Improving](#helping)  
+3. [Help & Improve](#helping)  
 4. [Languages](#languages)  
 5. [Known Issues)](#issues)  
 6. [Version History](#history)  
 
 # Installation <a id="install"></a>
 1. [Download](https://github.com/distantnative/relative-date/archive/master.zip) the current release.
-2. Add the `relative-date.php`, `core.php` and `lang` folder to the `site/plugins/relative-date/` directory. You probably need to create the `relative-date` folder inside `site/plugins/` first.
+2. Copy everything to `site/plugins/relative-date/`.
 
 To **update** to a higher version of this plugin, replace the files with the newer version.
 
@@ -35,20 +36,23 @@ Published: (relativedate: 2015-02-15)
 
 # Options <a id="options"></a>
 
-### Parameters
+## Parameters
 
+**Language**  
 You can set some options on an per-use basis by passing them through as parameters. If you wan to get a specific language, just pass the locale as string:
 
 ```php
 $page->published()->relative('es');
 ```
 
+**Length**  
 If you want to specify the number of elements, just pass the (length)[#length] as integer:
 
 ```php
 $page->published()->relative(1);
 ```
 
+**Multiple parameters**  
 If you want to specify multiple options, pass them as an array:
 
 ```php
@@ -61,12 +65,13 @@ $args = array(
 $page->published()->relative($args);
 ```
 
+**In a Kirbytag**  
 If you use the Kirbytext tag, this works as well:
 ```
 (relativedate: 2015-02-15 lang: es length: 1 threshold: 99999 fuzzy: false)
 ```
 
-### Global options
+## Global options
 
 In addition to passing some options as parameters, you also can set some global options in your `sites/config/config.php`:
 
@@ -101,10 +106,10 @@ You can also define the default fallback language (if not, it defaults to Englis
 c::set('relativedate.lang', 'ja');
 ```
 
-# Helping & Improving <a id="helping"></a>
-Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/kirby-relativedate/issues).
+# Help & Improve <a id="helping"></a>
+Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/relativ-edate/issues).
 
-In addition, if you think a language is missing, [let me know](https://github.com/distantnative/kirby-relativedate/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/kirby-relativedate/issues/20).
+In addition, if you think a language is missing, [let me know](https://github.com/distantnative/relative-date/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/relative-date/issues/20).
 
 # Languages supported <a id="languages"></a>
 
