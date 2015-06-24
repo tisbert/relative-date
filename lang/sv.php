@@ -4,7 +4,7 @@
  *    Language file: Swedish (sv)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  1.1
+ *    Version:  1.2
  */
 
 return array(
@@ -14,6 +14,7 @@ return array(
     'before_now'  => '|:phrase| sedan',
     'next'        => 'nästa |:reference|',
     'last'        => 'förra |:reference|',
+    'and'         => 'och',
   ),
 
   'sec' => array('1 sekund', '|:count| sekunder'),

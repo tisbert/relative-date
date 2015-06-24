@@ -14,6 +14,7 @@ return array(
     'before_now'  => 'vor |:phrase|',
     'next'        => 'nächste|:reference|',
     'last'        => 'letzte|:reference|',
+    'and'         => 'und',
   ),
 
   'sec' => array('1 Sekunde', '|:count| Sekunden'),

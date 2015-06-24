@@ -92,6 +92,13 @@ You can define how many date/time elements the phrase should entail. The default
 c::set('relativedate.length', 4);
 ```
 
+**Conjunctions <a id="conjunctions"></a>**  
+You can glue the date and time elements together with conjunctions instead of just spaces by either setting the option to `true` (relying on language files) or specifying a conjunction:
+
+```php
+c::set('relativedate.conjunction', 'et');
+```
+
 **Fuzzy <a id="fuzzy"></a>**  
 Relative Date supports fuzzy expressions, which means that instead of the rather exact date difference one of the following expressions will be displayed: today, tomorrow/yesterday, next/last {weekday}, next/last week, next/last month:
 
@@ -148,6 +155,11 @@ In addition, if you think a language is missing, [let me know](https://github.co
 ``` 
 
 # Version History <a id="history"></a>
+**1.4**
+- Added option to use [conjunctions](#conjunctions) (automatically supported in English, German, French, Spanish, Catalan, Swedish)
+- Fixed fuzzy expression setting for the Kirbytag
+- Further code clean-up
+
 **1.3**
 - Renamed repository to `relative-date` and restructured files
 

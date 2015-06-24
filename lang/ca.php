@@ -14,6 +14,7 @@ return array(
     'before_now'  => 'fa |:phrase|',
     'next'        => array('|:reference| pròxim', '|:reference| pròxima'),
     'last'        => array('|:reference| passat',  '|:reference| passada'),
+    'and'         => 'y',
   ),
 
   'sec' => array('1 segon',   '|:count| segons'),
