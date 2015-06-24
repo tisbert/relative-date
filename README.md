@@ -155,6 +155,11 @@ In addition, if you think a language is missing, [let me know](https://github.co
 ``` 
 
 # Version History <a id="history"></a>
+**1.4**
+- Added option to use [conjunctions](#conjunctions) (automatically supported in English, German, French, Spanish, Catalan, Swedish)
+- Fixed fuzzy expression setting for the Kirbytag
+- Further code clean-up
+
 **1.3**
 - Renamed repository to `relative-date` and restructured files
 
