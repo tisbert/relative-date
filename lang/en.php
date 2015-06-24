@@ -4,7 +4,7 @@
  *    Language file: English (en)
  *    ----
  *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  1.0
+ *    Version:  1.1
  */
 
 return array(
@@ -14,6 +14,7 @@ return array(
     'before_now'  => '|:phrase| ago',
     'next'        => 'next |:reference|',
     'last'        => 'last |:reference|',
+    'and'         => 'and',
   ),
 
   'sec' => array('1 second', '|:count| seconds'),

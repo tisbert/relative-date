@@ -28,7 +28,7 @@ field::$methods['relative'] = function($field, $args = null) {
     if ($args['threshold'] === false or
         abs(strtotime($field->value) - time()) <= $args['threshold']) {
       try {
-        $relative = new relativeTimeDate($field->value, $args);
+        $relative = new RelativeDate($field->value, $args);
         $field->value = $relative->get($args['length']);
       } catch (Exception $e) {
         $field->value = $field->value;
@@ -63,7 +63,7 @@ kirbytext::$tags['relativedate'] = array(
     if ($args['threshold'] === false or
         abs(strtotime($tag->attr('relativedate')) - time()) <= $args['threshold']) {
       try {
-        $relative = new relativeTimeDate($tag->attr('relativedate'), $args);
+        $relative = new RelativeDate($tag->attr('relativedate'), $args);
         return $relative->get($args['length']);
       } catch (Exception $e) {
         return $tag->attr('relativedate');
