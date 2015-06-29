@@ -1,6 +1,6 @@
 ![Relative Date for Kirby CMS](http://distantnative.com/remote/github/kirby-relativedate-github.png)  
 
-[![Release](https://img.shields.io/github/release/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/releases)  [![Issues](https://img.shields.io/github/issues/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/issues) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/distantnative/footnotes/master/LICENSE)
+[![Release](https://img.shields.io/github/release/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/releases)  [![Issues](https://img.shields.io/github/issues/distantnative/relative-date.svg)](https://github.com/distantnative/relative-date/issues) [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://raw.githubusercontent.com/distantnative/relative-date/master/LICENSE)
 [![Moral License](https://img.shields.io/badge/buy-moral_license-8dae28.svg)](https://gumroad.com/l/kirby-relativedate)
 
 The Relative Date plugin for Kirby CMS displays date and time to a human-readable relative format. It converts your absolute date (and time) in something relative and more readable, e.g.: 
@@ -116,7 +116,7 @@ c::set('relativedate.lang', 'ja');
 ```
 
 # Help & Improve <a id="helping"></a>
-Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/relativ-edate/issues).
+Help is always appreciated. Suggestions, ideas or bugs - let me please know by [opening an issue](https://github.com/distantnative/relative-date/issues).
 
 In addition, if you think a language is missing, [let me know](https://github.com/distantnative/relative-date/issues/11). And if you can even help with translations, [head over here](https://github.com/distantnative/relative-date/issues/32).
 
