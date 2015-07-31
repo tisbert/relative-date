@@ -96,9 +96,7 @@ class RelativeDate {
       array_push($elements, array($this->difference->s, $this->language['sec']));
     }
 
-    return array_map(function($e) {
-      return $this->term($e);
-    }, $elements);
+    return array_map(array($this, 'term'), $elements);
   }
 
 
