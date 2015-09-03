@@ -7,7 +7,7 @@ require 'core.php';
  */
 
 function relativeDate($date, $args = array()) {
-  //default for $args
+  // default for $args
   $defaults = array(
     'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en'),
     'length'    => c::get('relativedate.length', 2),
@@ -15,6 +15,12 @@ function relativeDate($date, $args = array()) {
     'fuzzy'     => c::get('relativedate.fuzzy', true)
   );
   $args = array_merge($defaults, $args);
+
+  // check if $date is a timestamp
+  if (RelativeDate::isTimestamp($date)) {
+    $date = date(DATE_ATOM, $date);
+  }
+
 
   // only convert to relative if time difference no exceeds threshold
   if ($args['threshold'] === false or
