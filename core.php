@@ -92,7 +92,7 @@ class RelativeDate {
       array_push($elements, array($this->difference->i, $this->language['min']));
     }
     // seconds
-    if ($this->difference->s > 0) {
+    if ($this->difference->s > 0 or count($elements) == 0) {
       array_push($elements, array($this->difference->s, $this->language['sec']));
     }
 
@@ -262,6 +262,15 @@ class RelativeDate {
              $before->format('n') == $this->now->format('n')
            );
   }
+
+  public static function isTimestamp($string) {
+      $check = (is_int($string) OR is_float($string)) ? $string : (string) (int) $string;
+      return  ($check === $string)
+              AND ( (int) $string <=  PHP_INT_MAX)
+              AND ( (int) $string >= ~PHP_INT_MAX);
+    }
+
+
 }
 
 

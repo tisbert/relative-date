@@ -12,8 +12,8 @@ return array(
   'phrases'  => array(
     'after_now'   => '|:phrase| fa',
     'before_now'  => 'tra |:phrase|',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
+    'next'        => array('|:reference| prossimo', '|:reference| prossima'),
+    'last'        => array('|:reference| scorso', '|:reference| scorsa'),
   ),
 
   'sec' => array('1 secondo',   '|:count| secondi'),
@@ -24,22 +24,21 @@ return array(
   'm'   => array('1 mese',      '|:count| mesi'),
   'y'   => array('1 anno',      '|:count| anni'),
 
-  /*
+
   'fuzzy' => array(
-    'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    'today' => 'oggi',
+    '1day'  => array('domani','ieri'),
 
-    'Mon'   => 'Monday',
-    'Tue'   => 'Tuesday',
-    'Wed'   => 'Wednesday',
-    'Thu'   => 'Thursday',
-    'Fri'   => 'Friday',
-    'Sat'   => 'Saturday',
-    'Sun'   => 'Sunday',
+    'Mon'   => 'Lunedi',
+    'Tue'   => 'Martedì',
+    'Wed'   => 'Mercoledì',
+    'Thu'   => 'Giovedi',
+    'Fri'   => 'Venerdì',
+    'Sat'   => 'Sabato',
+    'Sun'   => array('Domenica', 1),
 
-    'week'  => 'week',
-    'month' => 'month',
+    'week'  => array('settimana', 1),
+    'month' => 'mese',
   ),
-  */
 
 );

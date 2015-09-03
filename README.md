@@ -8,7 +8,7 @@ The Relative Date plugin for Kirby CMS displays date and time to a human-readabl
 > 2 months 3 days ago  
 > 5 hours 47 minutes 18 seconds from now  
  
-The plugin is free, but I'd appreciate if you'd support me with a [moral license](https://gumroad.com/l/kirby-relativedate)!
+**The plugin is free. However, I would really appreciate if you could support me with a [moral license](https://gumroad.com/l/kirby-relativedate)!**
 
 #### Overview
 1. [Installation](#install)  
@@ -34,6 +34,11 @@ You can either use it as field method:
 Or as [Kirbytext](http://getkirby.com/docs/content/text) tag:
 ```
 Published: (relativedate: 2015-02-15)
+```
+
+Or with the `relativeDate()` helper function:
+```
+<?php echo relativeDate($page->modified()) ?>
 ```
 
 # Options <a id="options"></a>
@@ -149,51 +154,10 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Turkish (tr)
 
 # Known Issues <a id="issues"></a>
-- This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`. As another workaround the `date` field could be included in a `relativedate` Kirbytext tag:
+- This plugin cannot be used with the Kirby's default date field as it is not chainable. Please use the plugin on a field named differently than `date`, e.g. `published`. As another workaround the `date` field could be passed directly to the `relativeDate()` helper function:
 ```php
-<?php echo kirbytext('(relativedate: ' . $page->date('Y-m-d') . ')') ?>
+<?php echo relativeDate($page->date('Y-m-d')) ?>
 ``` 
 
 # Version History <a id="history"></a>
-**1.4**
-- Added option to use [conjunctions](#conjunctions) (automatically supported in English, German, French, Spanish, Catalan, Swedish)
-- Fixed fuzzy expression setting for the Kirbytag
-- Further code clean-up
-
-**1.3**
-- Renamed repository to `relative-date` and restructured files
-
-**v1.2**
-- Added fuzzy expressions for Turkish, Portuguese, Dutch and Finnish
-- Bugfixes
-
-**v1.1**
-- Moved plugin logic to relativeTimeDate class
-- Improved parameter handling
-- Added option to specify a different language as the current
-- Systemized and cleaned up language files
-- Added language support for time-sensitive and gendered fuzzy expressions (already enabled in French, Spanish, Brazilian Portuguese and Catalan)
-- Added support for Catalan
-- Added fuzzy expressions for Swedish, Norwegian, Danish, Brazilian Portuguese and Catalan
-
-**v1.0**
-- Rewritten human readable & [fuzzy expression](#fuzzy) logic
-- Switched to using DateTime
-- Added Romanian support
-
-**v0.9**
-- Added [threshold option](#threshold)
-- Complete rewrite [fuzzy expression](#fuzzy) logic, located it to ```site/config/config.php```
-- Added Czech, Bulgarian, Chinese, Chinese Taiwan, Danish support
-- Improved minor things on Thai translation
-
-**v0.8**
-- Complete rewrite of logic for languages that feature multiple plural forms with specific rule sets (e.g. Russian)
-- Fixed Russian localization
-- Added support for Norwegian, Polish, Brazilian Portuguese, Finnish, Turkish, Serbian
-- Added experimental support for Arabic
-
-**v0.7**
-- Added basic [fuzzy expression support](#fuzzy) 
-- Fixed wrong language matching for years
-- Code simplifications
+Check out the more or less complete [changelog](https://github.com/distantnative/relative-date/blob/master/CHANGELOG.md).
