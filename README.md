@@ -8,7 +8,7 @@ The Relative Date plugin for Kirby CMS displays date and time to a human-readabl
 > 2 months 3 days ago  
 > 5 hours 47 minutes 18 seconds from now  
  
-The plugin is free, but I'd appreciate if you'd support me with a [moral license](https://gumroad.com/l/kirby-relativedate)!
+**The plugin is free. However, I would really appreciate if you could support me with a [moral license](https://gumroad.com/l/kirby-relativedate)!**
 
 #### Overview
 1. [Installation](#install)  
