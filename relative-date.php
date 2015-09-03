@@ -2,45 +2,54 @@
 
 require 'core.php';
 
+/**
+ *  Helpfer function relativeDate()
+ */
+
+function relativeDate($date, $args = array()) {
+  //default for $args
+  $defaults = array(
+    'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en'),
+    'length'    => c::get('relativedate.length', 2),
+    'threshold' => c::get('relativedate.threshold', false),
+    'fuzzy'     => c::get('relativedate.fuzzy', true)
+  );
+  $args = array_merge($defaults, $args);
+
+  // only convert to relative if time difference no exceeds threshold
+  if ($args['threshold'] === false or
+      abs(strtotime($date) - time()) <= $args['threshold']) {
+    try {
+      $relative = new RelativeDate($date, $args);
+      return $relative->get($args['length']);
+    } catch (Exception $e) {
+      return $date;
+    }
+  } else {
+    return $date;
+  }
+}
+
 
 /**
- *  Field method '->relative($threshold, $gran)'
+ *  Field method '->relative($lang|$length)'
  */
 
 field::$methods['relative'] = function($field, $args = null) {
-    $defaults = array(
-      'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en'),
-      'length'    => c::get('relativedate.length', 2),
-      'threshold' => c::get('relativedate.threshold', false),
-      'fuzzy'     => c::get('relativedate.fuzzy', true)
-    );
-
-    if (is_array($args))
-      $args = array_merge($defaults, $args);
-    elseif (is_string($args) and strlen($args) >= 2 and strlen($args) <= 5)
-      $args = array_merge($defaults, array('lang' => $args));
-    elseif (is_int($args))
-      $args = array_merge($defaults, array('length' => $args));
-    else
-      $args = $defaults;
-
-    // only convert to relative if time difference no exceeds threshold
-    if ($args['threshold'] === false or
-        abs(strtotime($field->value) - time()) <= $args['threshold']) {
-      try {
-        $relative = new RelativeDate($field->value, $args);
-        $field->value = $relative->get($args['length']);
-      } catch (Exception $e) {
-        $field->value = $field->value;
-      }
+    // check for shorthand $args
+    if (is_string($args) and strlen($args) >= 2 and strlen($args) <= 5) {
+      $args = array('lang' => $args);
+    } elseif (is_int($args)) {
+      $args = array('length' => $args);
     }
 
+    $field->value = relativeDate($field->value, $args);
     return $field;
 };
 
 
 /**
- *  Kirbytext tag '(relativedate: $date $threshold, $gran)'
+ *  Kirbytext tag '(relativedate: $date)'
  */
 
 kirbytext::$tags['relativedate'] = array(
@@ -50,27 +59,15 @@ kirbytext::$tags['relativedate'] = array(
       'threshold',
       'fuzzy'
     ),
+
   'html' => function($tag) {
     $args = array(
       'lang'      => $tag->attr('lang', (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en')),
       'length'    => $tag->attr('length', c::get('relativedate.length', 2)),
       'threshold' => $tag->attr('threshold', c::get('relativedate.threshold', false)),
-      'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true))
+      'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true) === 'false' ? false : true)
     );
 
-    $args['fuzzy'] = ($args['fuzzy'] === 'false') ? false : $args['fuzzy'];
-
-    if ($args['threshold'] === false or
-        abs(strtotime($tag->attr('relativedate')) - time()) <= $args['threshold']) {
-      try {
-        $relative = new RelativeDate($tag->attr('relativedate'), $args);
-        return $relative->get($args['length']);
-      } catch (Exception $e) {
-        return $tag->attr('relativedate');
-      }
-    } else {
-      return $tag->attr('relativedate');
-    }
-
+    return relativeDate($tag->attr('relativedate'), $args);
   }
 );
