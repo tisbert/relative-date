@@ -111,7 +111,7 @@ Relative Date supports fuzzy expressions, which means that instead of the rather
 c::set('relativedate.fuzzy', false);
 ```
 
-Fuzzy expressions are only supported by a few of the included languages yet (English, German, French, Spanish, Swedish, Catalan, Brazilian Portuguese).
+Fuzzy expressions are only supported by a few of the included languages yet (English, Brazilian Portuguese, Catalan, French, German, Indonesian, Spanish, Swedish).
 
 **Default Language**  
 You can also define the default fallback language (if not, it defaults to English):
@@ -139,6 +139,7 @@ In addition, if you think a language is missing, [let me know](https://github.co
 - Finnish (fi)
 - French (fr)
 - German (de)
+- Indonesian (id)
 - Italian (it)
 - Japanese (ja)
 - Norwegian (no)

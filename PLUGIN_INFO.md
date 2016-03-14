@@ -27,4 +27,4 @@ You can find the full information and documentation of all options over at the [
 
 # Languages supported
 
-Arabic, Bulgarian, Catalan, Chinese, Chinese Taiwan, Czech, Danish, Dutch, English, Finnish, French, German, Italian, Japanese, Norwegian, Polish, Portuguese, Portuguese Brazilian, Romanian, Russian, Serbian, Spanish, Swedish, Thai, Turkish – [help with them is always appreciated](https://github.com/distantnative/relative-date/issues/32).
+Arabic, Bulgarian, Catalan, Chinese, Chinese Taiwan, Czech, Danish, Dutch, English, Finnish, French, German, Indonesian, Italian, Japanese, Norwegian, Polish, Portuguese, Portuguese Brazilian, Romanian, Russian, Serbian, Spanish, Swedish, Thai, Turkish – [help with them is always appreciated](https://github.com/distantnative/relative-date/issues/32).

@@ -1,8 +1,8 @@
 {
-  "name":     "Relative Date",
-  "author":   "Nico Hoffmann",
-  "version":  "1.5",
-  "repository": {
-    "url": "https://github.com/distantnative/relative-date"
-  }
+  "name": "Relative Date",
+  "description": "Kirby Relative Date Plugin",
+  "author": "Nico Hoffmann <on-github@nhoffmann.com>",
+  "version": "1.6",
+  "type": "kirby-plugin",
+  "repository": "https://github.com/distantnative/relative-date"
 }
