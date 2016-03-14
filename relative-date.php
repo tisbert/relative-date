@@ -12,7 +12,8 @@ function relativeDate($date, $args = array()) {
     'lang'      => (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en'),
     'length'    => c::get('relativedate.length', 2),
     'threshold' => c::get('relativedate.threshold', false),
-    'fuzzy'     => c::get('relativedate.fuzzy', true)
+    'fuzzy'     => c::get('relativedate.fuzzy', true),
+    'format'    => c::get('relativedate.format', 'd.m.Y')
   );
   $args = array_merge($defaults, $args);
 
@@ -27,13 +28,21 @@ function relativeDate($date, $args = array()) {
       abs(strtotime($date) - time()) <= $args['threshold']) {
     try {
       $relative = new RelativeDate($date, $args);
-      return $relative->get($args['length']);
+      $result = $relative->get($args['length']);
     } catch (Exception $e) {
-      return $date;
+      $result = $date;
     }
   } else {
-    return $date;
+    $result = $date;
   }
+
+  // if we had no change to date due to any bug or exceeding threshold
+  if($result === $date){
+    $date   = new Datetime($date);
+    $result = $date->format($args['format']);
+  }
+
+  return $result;
 }
 
 
@@ -63,7 +72,8 @@ kirbytext::$tags['relativedate'] = array(
       'lang',
       'length',
       'threshold',
-      'fuzzy'
+      'fuzzy',
+      'format'
     ),
 
   'html' => function($tag) {
@@ -71,7 +81,8 @@ kirbytext::$tags['relativedate'] = array(
       'lang'      => $tag->attr('lang', (count(site()->languages()) >= 1) ? site()->language()->code() : c::get('relativedate.lang', 'en')),
       'length'    => $tag->attr('length', c::get('relativedate.length', 2)),
       'threshold' => $tag->attr('threshold', c::get('relativedate.threshold', false)),
-      'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true) === 'false' ? false : true)
+      'fuzzy'     => $tag->attr('fuzzy', c::get('relativedate.fuzzy', true) === 'false' ? false : true),
+      'format'    => $tag->attr('format', c::get('relativedate.format', 'd.m.Y'))
     );
 
     return relativeDate($tag->attr('relativedate'), $args);
