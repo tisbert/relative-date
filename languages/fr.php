@@ -27,7 +27,7 @@ return array(
 
   'fuzzy' => array(
     'today' => 'aujourd\'hui',
-    '1day'  => array('demain','hier'),
+    '1day'  => array('demain', 'hier'),
 
     'Mon'   => 'lundi',
     'Tue'   => 'mardi',
