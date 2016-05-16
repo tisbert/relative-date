@@ -1,33 +1,33 @@
 <?php
 
-/**
- *    Language file: German (de)
- *    ----
- *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  1.0
- */
+// ==================================================================
+//  Language: German [de]
+//  ----
+//  Author:   distantnative <nico@getkirby.com>
+//  Version:  1.1
+//  Supports: 2.0.0
+// ==================================================================
 
-return array(
-
-  'phrases'  => array(
+return [
+  'phrases'  => [
     'after_now'   => 'in |:phrase|',
     'before_now'  => 'vor |:phrase|',
     'next'        => 'nächste|:reference|',
     'last'        => 'letzte|:reference|',
     'and'         => 'und',
-  ),
+  ],
 
-  'sec' => array('1 Sekunde', '|:count| Sekunden'),
-  'min' => array('1 Minute',  '|:count| Minuten'),
-  'h'   => array('1 Stunde',  '|:count| Stunden'),
-  'd'   => array('1 Tag',     '|:count| Tagen'),
-  'w'   => array('1 Woche',   '|:count| Wochen'),
-  'm'   => array('1 Monat',   '|:count| Monaten'),
-  'y'   => array('1 Jahr',    '|:count| Jahren'),
+  'sec' => ['1 Sekunde', '|:count| Sekunden'],
+  'min' => ['1 Minute',  '|:count| Minuten'],
+  'h'   => ['1 Stunde',  '|:count| Stunden'],
+  'd'   => ['1 Tag',     '|:count| Tagen'],
+  'w'   => ['1 Woche',   '|:count| Wochen'],
+  'm'   => ['1 Monat',   '|:count| Monaten'],
+  'y'   => ['1 Jahr',    '|:count| Jahren'],
 
-  'fuzzy' => array(
+  'fuzzy' => [
     'today' => 'heute',
-    '1day'  => array('morgen','gestern'),
+    '1day'  => ['morgen','gestern'],
 
     'Mon'   => 'n Montag',
     'Tue'   => 'n Dienstag',
@@ -39,6 +39,5 @@ return array(
 
     'week'  => ' Woche',
     'month' => 'n Monat',
-  ),
-
-);
+  ],
+];

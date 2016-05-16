@@ -1,91 +1,91 @@
 <?php
 
-/**
- *    Language file: Arabic (ar)
- *    ----
- *    Author:   distantnative (https://github.com/distantnative)
- *    Version:  0.9
- */
+// ==================================================================
+//  Language: Arabic [ar]
+//  ----
+//  Author:   distantnative <nico@getkirby.com>
+//  Version:  1.0
+//  Supports: 1.5
+// ==================================================================
 
-$rules = array(
+$rules = [
   '|:n| == 0',
   '|:n| == 1',
   '|:n| == 2',
   '|:n|%100 >= 3 and |:n|%100 <= 10',
   '|:n|%100 >= 11',
   'true'
-);
+];
 
-return array(
-
-  'phrases'  => array(
+return [
+  'phrases'  => [
     'after_now'   => 'من الآن |:phrase|',
     'before_now'  => 'منذ |:phrase|',
-    // 'next'        => 'next |:reference|',
-    // 'last'        => 'last |:reference|',
-  ),
+    // 'next'      => 'next |:reference|',
+    // 'last'      => 'last |:reference|',
+  ],
 
-  'sec' => array(
-    array($rules[0], 'ثانية'),
-    array($rules[1], 'ثانية'),
-    array($rules[2], 'ثانيتين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| ثوان'),
-  ),
-  'min' => array(
-    array($rules[0], 'دقيقة'),
-    array($rules[1], 'دقيقة'),
-    array($rules[2], 'دقيقتين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| دقائق'),
-  ),
-  'h'   => array(
-    array($rules[0], 'ساعة'),
-    array($rules[1], 'ساعة'),
-    array($rules[2], 'ساعتين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| ساعات'),
-  ),
-  'd'   => array(
-    array($rules[0], 'يوم'),
-    array($rules[1], 'يوم'),
-    array($rules[2], 'يومين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| أيام'),
-  ),
-  'w'   => array(
-    array($rules[0], 'أسبوع'),
-    array($rules[1], 'أسبوع'),
-    array($rules[2], 'أسبوعين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| أسابيع'),
-  ),
-  'm'   => array(
-    array($rules[0], 'شهر'),
-    array($rules[1], 'شهر'),
-    array($rules[2], 'شهرين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| شهور / أشهر'),
-  ),
-  'y'   => array(
-    array($rules[0], 'سنة'),
-    array($rules[1], 'سنة'),
-    array($rules[2], 'سنتين'),
-    // array($rules[3], '|:count| '),
-    // array($rules[4], '|:count| '),
-    array($rules[5], '|:count| سنوات / سنين'),
-  ),
+  'sec' => [
+    [$rules[0], 'ثانية'],
+    [$rules[1], 'ثانية'],
+    [$rules[2], 'ثانيتين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| ثوان'],
+  ],
+  'min' => [
+    [$rules[0], 'دقيقة'],
+    [$rules[1], 'دقيقة'],
+    [$rules[2], 'دقيقتين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| دقائق'],
+  ],
+  'h'   => [
+    [$rules[0], 'ساعة'],
+    [$rules[1], 'ساعة'],
+    [$rules[2], 'ساعتين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| ساعات'],
+  ],
+  'd'   => [
+    [$rules[0], 'يوم'],
+    [$rules[1], 'يوم'],
+    [$rules[2], 'يومين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| أيام'],
+  ],
+  'w'   => [
+    [$rules[0], 'أسبوع'],
+    [$rules[1], 'أسبوع'],
+    [$rules[2], 'أسبوعين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| أسابيع'],
+  ],
+  'm'   => [
+    [$rules[0], 'شهر'],
+    [$rules[1], 'شهر'],
+    [$rules[2], 'شهرين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| شهور / أشهر'],
+  ],
+  'y'   => [
+    [$rules[0], 'سنة'],
+    [$rules[1], 'سنة'],
+    [$rules[2], 'سنتين'],
+    // [$rules[3], '|:count| '],
+    // [$rules[4], '|:count| '],
+    [$rules[5], '|:count| سنوات / سنين'],
+  ],
 
   /*
-  'fuzzy' => array(
+  'fuzzy' => [
     'today' => 'today',
-    '1day'  => array('tomorrow','yesterday'),
+    '1day'  => ['tomorrow','yesterday'],
 
     'Mon'   => 'Monday',
     'Tue'   => 'Tuesday',
@@ -97,7 +97,6 @@ return array(
 
     'week'  => 'week',
     'month' => 'month',
-  ),
+  ],
   */
-
-);
+];
