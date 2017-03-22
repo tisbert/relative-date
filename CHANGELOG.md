@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.0](https://github.com/distantnative/relative-date/releases/tag/2.0.0) (2017-03-22)
+- Rewritten as wrapper for the [Carbon library](http://carbon.nesbot.com/)
+
+
 ## Version 1.5
 - Added a `relativeDate()` helper method
 - Enabled relative date for UNIX timestamps
