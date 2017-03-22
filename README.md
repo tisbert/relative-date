@@ -6,11 +6,9 @@ Relative Date enables Kirby CMS to display date and time in a human-readable  fo
 
 #### Overview
 1. [Requirements](#Requirements)
-1. [Installation](#install)  
-1. [Usage](#use)  
-2. [Options](#options)  
-4. [Languages](#languages)  
-3. [Help & Improve](#helping)  
+2. [Installation](#install)  
+3. [Usage](#use)  
+4. [Help & Improve](#helping)  
 5. [Known Issues)](#issues)  
 6. [Version History](#history)  
 
