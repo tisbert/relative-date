@@ -1,6 +1,6 @@
 {
-  "name": "relativeDate",
-  "description": "Kirby Relative Date Plugin",
+  "name": "relative-date",
+  "description": "Relative Date for Kirby",
   "author": "Nico Hoffmann <nico@getkirby.com>",
   "version": "2.0.0",
   "type": "kirby-plugin",
