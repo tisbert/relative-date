@@ -26,7 +26,7 @@ return array(
 
   'fuzzy' => array(
     'today' => 'i dag',
-    '1day'  => array('i morgon','i går'),
+    '1day'  => array('i morgen','i går'),
 
     'Mon'   => 'mandag',
     'Tue'   => 'tirsdag',
