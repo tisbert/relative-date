@@ -1,7 +1,24 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'core/core.php';
+
+class RelativeDate {
+
+  protected $carbon;
+
+  public function __construct($date) {
+    $this->carbon = new Carbon\Carbon($date);
+    Carbon\Carbon::setLocale(site()->locale());
+  }
+
+  public function __call($name, $args) {
+    return $this->carbon->{$name}($args);
+  }
+
+  public function __toString() {
+    return $this->carbon->diffForHumans();
+  }
+}
 
 
 $kirby->set('tag', 'relativeDate', [
@@ -15,5 +32,5 @@ $kirby->set('field::method', 'relativeDate', function($field) {
 });
 
 function relativeDate($date) {
-  return new Kirby\RelativeDate\Core($date);
+  return new RelativeDate($date);
 }
